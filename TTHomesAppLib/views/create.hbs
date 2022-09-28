@@ -1,0 +1,60 @@
+  {{> navbar}}
+
+
+<div class="about">
+  <h2>Create building</h2>
+  <div class = "create_form">
+  <form method="POST" action="/create" enctype="multipart/form-data">
+      <label>Upload 7 photos</label> <br>
+      <input type="file" name="filedata" multiple required> <br>
+
+
+      <br>
+      <label for = "id">ID</label>
+      <input type="text" id="id" name="id" required>
+
+
+      <br>
+      <label for = "selector">Building options</label>
+      <select type="text" id="selector" name="selector" required>
+          <option>Villas</option>
+          <option>Townhouses</option>
+          <option>Flats</option>
+      </select>
+
+      <br><br>
+      <label for = "address">Address</label>
+      <input type="text" id="address" name="address" required>
+
+      <br>
+      <label for = "lat">Latitude</label>
+      <input type="text" id="lat" name="lat" required>
+
+      <br>
+      <label for = "lng">Longtitude</label>
+      <input type="text" id="lng" name="lng" required>
+
+
+     
+      
+      <br>
+      <label for = "price">Price</label>
+      <input type="text" id="price" name="price" required>
+
+      <br>
+      <label for = "descriptionEN">Description (English)</label>
+      <input type="text" id="descriptionEN" name="descriptionEN" required>
+
+      <br>
+      <label for = "descriptionDE">Description (German)</label>
+      <input type="text" id="descriptionDE" name="descriptionDE" required>
+
+      <br>
+      <label for = "descriptionRU">Description (Russian)</label>
+      <input type="text" id="descriptionRU" name="descriptionRU" required>
+
+      <button type="submit" class="btn">Send</button>
+
+  </form>
+  </div>
+</div>

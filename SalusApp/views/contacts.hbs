@@ -1,0 +1,137 @@
+  {{> navbar}}
+<div class="headerMobile">
+    <h1 id="aboutHeadMobile">About Us</h1>
+</div>
+<div class="headerDesktop">
+    <section class="outter option1">
+        <section class="video-container">
+        <img class = "video" src="./images/Buddah.jpg">
+        <div class="callout">
+            <div class="desc" id="aboutHeadDesktop">ABOUT OUR COMPANY</div>
+        </div>
+        </section>
+    </section>
+</div>
+
+<div class="optionsTableHeader">
+    <h1 id = "welcomeTextHeader">Welcome to Salus!</h1>
+</div>
+
+<div class="item">
+    <h4 id="item1">
+        <br>
+        We are your professional real estate agency. 
+        <br><br>
+        Are you looking for help with the sale, purchase, maintenance and care or even the rental of a property on Kho Samui and Mallorca?
+        <br><br>
+        Our team speaks fluent Thai, English, German and Russian.
+        <br><br>
+        We are your qualified and personal contact!
+        <br><br>
+    </h4>
+</div>
+
+<div class="item">
+    <div class='row'>
+        <div class='column'>
+            <img src="./images/item2.jpeg">
+        </div>
+        <div class='column'>
+            <h4 id="item2">
+                <br>
+                Are you finding it difficult to find your dream property?
+                <br> <br><br>
+                We have your tailored solutions. 
+                <br> <br>
+                We specialize in high-quality real estate and can offer you a unique "all-round carefree package" thanks to many years of experience in this sector. 
+                <br> <br>
+                From buying an existing property, finding the right building plot or construction to moving in, we are always at your side with full competence.
+                <br> <br>
+            </h4>
+        </div>
+    </div>
+
+
+</div>
+
+<div class="item">
+     <div class='row'>
+         <div class='column'>
+            <img src="./images/item3.jpeg">
+        </div>
+        <div class='column'>
+            <h4 id="item3">
+                <br>
+                Why invest in Samui?
+                <br><br><br>
+                <li>	Investors can receive rental yields of approx. 8-10 % in Thailand.</li><br>
+                <li>	The occupancy rate of Thai properties is 80-90% in holiday rentals throughout the year.</li><br>
+                <li>	Thailand has a rapid economic growth. </li><br>
+                <li>	Investment volume in Thai real estate in 2021 grew by more than five times the volume in 2020</li><br>
+            </h4>
+        </div>
+    </div>
+</div>
+<br><br>
+<div>
+    <h4 id="item4">
+        We can't wait to help you make your real estate dreams come true.
+    </h4>
+
+</div>
+<br><br>
+
+<script type="text/javascript">
+        var userLang = localStorage.language
+        if (!userLang) {
+            userLang = navigator.language || navigator.userLanguage;
+            localStorage.language = userLang;
+        }
+        translatorRentAll(userLang);
+
+        function langSelect(){
+            userLang = document.getElementById("lang").value;
+            localStorage.language = userLang;
+            translatorRentAll(userLang);
+        }
+
+        function translatorRentAll (userLang) {
+            
+            if (userLang == "de-DE") {
+                //top bar
+                document.getElementById("aboutHeadMobile").innerHTML = "Über uns";
+                document.getElementById("aboutHeadDesktop").innerHTML = "ÜBER UNSERE FIRMA";
+
+                //items
+                document.getElementById("welcomeTextHeader").innerHTML = "Willkommen bei Salus!";
+                
+                document.getElementById("item1").innerHTML = "<br>Wir sind Ihre persönliche Immobilienagentur. <br><br>Sie suchen Hilfe für den Verkauf, Kauf, Wartung und Pflege oder auch die Vermietung eines Objekts auf Kho Samui und Mallorca? <br><br>Unser Team spricht fließend Thai, Englisch, Deutsch und Russisch.<br><br>Wir sind Ihr qualifizierter und persönlicher Ansprechpartner!<br><br>";
+                
+                document.getElementById("item2").innerHTML = "<br>Es fällt ihnen schwer Wunschimmobilie zu finden? <br><br> <br>Wir haben Ihre maßgeschneiderten Lösungen. <br> <br> Wir sind spezialisiert auf hochwertige Immobilien und können Ihnen durch langjährige Erfahrung in diesem Sektor ein einmaliges „Rundum-Sorglos-Paket“ bieten. <br> <br>Vom Kauf eines bereits existierenden Objekts, dem Finden des richtigen Baugrundstücks oder dem Bau bis zum Einzug, wir stehen Ihnen jederzeit mit voller Kompetenz zur Seite.<br> <br>";
+                
+                document.getElementById("item3").innerHTML = "<br>Warum in Samui investieren?<br><br><br><li>	Investoren können in Thailand Mietrenditen von ca. 8-10 % erhalten.</li><br><li>	Die Auslastung thailändischen Immobilien beträgt 80-90 % in der Ferienvermietung über das gesamte Jahr.</li><br><li>	Thailand hat ein rasantes wirtschaftliches Wachstum. </li><br><li>	Das Investitionsvolumen im thailändischen Immobiliengewerbe wuchs im Jahr 2021 um mehr als das Fünffache des Volumens im Jahr 2020.</li><br>";
+                
+                document.getElementById("item4").innerHTML = "Wir können es kaum erwarten Ihnen helfen zu können, Ihren Immobilienwunsch zu erfüllen.";
+
+            
+            }
+            else if (userLang == "ru" || userLang == "ru-RU") {
+                //top bar
+                document.getElementById("aboutHeadMobile").innerHTML = "О нас";
+                document.getElementById("aboutHeadDesktop").innerHTML = "О НАШЕЙ КОМПАНИИ";
+
+                //items
+                document.getElementById("welcomeTextHeader").innerHTML = "Добро пожаловать в Salus!";
+                
+                document.getElementById("item1").innerHTML = "<br>Мы - Ваше персональное агентство недвижимости. <br><br>Вам нужна помощь в продаже, покупке, содержании и уходе или даже аренде недвижимости на Самуи и Майорке? <br><br>Наша команда свободно говорит на тайском, английском, немецком и русском языке.<br><br>Мы - Ваш квалифицированный и личный агент!<br><br>";
+                
+                document.getElementById("item2").innerHTML = "<br>Вам трудно найти недвижимость своей мечты?<br><br> <br>У нас есть для вас индивидуальные решения.  <br> <br>Мы специализируемся на высококачественной недвижимости и можем предложить вам уникальный 'всесторонний беззаботный пакет' благодаря многолетнему опыту работы в этом секторе.<br> <br>От покупки существующей недвижимости, поиска подходящего участка под застройку или строительства до переезда - мы всегда к вашим услугам с полной компетентностью.<br> <br>";
+                
+                document.getElementById("item3").innerHTML = "<br>Почему стоит инвестировать в Самуи?<br><br><br><li>	Инвесторы могут получать доходность от аренды в Таиланде около 8-10 %.</li><br><li>	Заполняемость тайской недвижимости составляет 80-90% при аренде для отдыха в течение всего года.</li><br><li>	В Таиланде наблюдается быстрый экономический рост. </li><br><li>	Объем инвестиций в тайскую недвижимость в 2021 году вырос более чем в пять раз по сравнению с 2020 годом.</li><br";
+                
+                document.getElementById("item4").innerHTML = "Мы с нетерпением ждем помочь вам найти или осуществить вашу недвижимость мечты.";
+
+            } 
+            else { console.log("Global"); }
+        }
+</script>

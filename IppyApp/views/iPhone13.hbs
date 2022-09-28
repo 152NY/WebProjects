@@ -1,0 +1,167 @@
+<body>
+    <script>
+        
+        var color = "Starlight";
+        window.onload = function () {
+            e_13STD();
+        }
+
+        function e_13STD(){
+
+            const memories = ['128 GB', '256 GB', '512 GB'];
+            const prices = [65990, 88990, 91990];
+
+            let inputId = " ";
+            let labelId = " ";
+            
+            for (let j = 0; j < memories.length; j++)
+            {
+                inputId = 'iPhone 13 ' + memories[j];
+                document.getElementById(inputId).value = prices[j];
+            }
+            for (let j = 0; j < memories.length; j++)
+            {
+                labelId = ('13 ' + memories[j]);
+                document.getElementById(labelId).innerHTML += (prices[j] + "₽");
+            }
+        }
+
+        function addFunc13() {
+            const device13 = new Device (
+                document.querySelector('input[name="13_1"]:checked ').id,
+                document.querySelector('input[name="13_1"]:checked').value,
+                color
+            );
+            arr.push(device13);
+                    
+            localStorage.setItem("my_models", JSON.stringify(arr));
+            alert("Товар добавлен в корзину");
+        }
+
+        function changeColor(x) {
+            if (x == "Blue") 
+            {
+                color = "Blue"
+                document.getElementById('13_photo').src = "./images/iPhones/13/13BL.jpg";
+                return color;
+            } 
+            else if(x == "Midnight") 
+            {
+                color = "Midnight"
+                document.getElementById('13_photo').src = "./images/iPhones/13/13BK.jpg";
+                return color;
+            }
+            else if(x == "Pink") 
+            {
+                color = "Pink"
+                document.getElementById('13_photo').src = "./images/iPhones/13/13PK.jpg";
+                return color;
+            }
+            else if(x == "Starlight") 
+            {
+                color = "Starlight"
+                document.getElementById('13_photo').src = "./images/iPhones/13/13WH.jpg";
+                return color;
+            }
+            else if(x == "(product)RED") 
+            {
+                color = "(product)RED"
+                document.getElementById('13_photo').src = "./images/iPhones/13/13PR.jpg";
+                return color;
+            }
+            else 
+            {
+                color = "Starlight"
+                document.getElementById('13_photo').src = "./images/iPhones/13/13WH.jpg";
+                return color;
+            }
+        }
+    </script>
+
+    <div class="container">
+        <div class = "foreground">    
+            <h1 id="catalog"> iPhone 13 </h1>
+
+            <div class="item_wide" >
+                <div class="row">
+                    <div class="column">
+                        <img id="13_photo" src="./images/iPhones/13/13WH.jpg" >
+                    </div>
+                    <div class="column">
+                        <div class="title">
+                            <h2>Цвет</h2>
+                        </div>
+                        <ul name="color" class="colorPicker">
+                            <li>
+                                <input type="radio" name="13" id="Starlight" value="Starlight" onclick="changeColor('Starlight')" checked>
+                                <label for="Starlight">
+                                    <img src="./images/colors/finish-starlight-202209.jpeg">
+                                    <span>Starlight</span>
+                                </label>
+                            </li>
+                            <br>
+                            <li>
+                                <input type="radio" name="13" id="Midnight" value="Midnight" onclick="changeColor('Midnight')">
+                                <label for="Midnight">
+                                    <img src="./images/colors/finish-midnight-202209.jpeg">
+                                    <span>Midnight</span>
+                                </label>
+                            </li>
+                            <br>
+                            <li>
+                                <input type="radio" name="13" id="Blue" value="Blue" onclick="changeColor('Blue')">
+                                <label for="Blue">
+                                    <img src="./images/colors/finish-blue-202108.jpeg">
+                                    <span>Blue</span>
+                                </label>
+                            </li>
+                            <br>
+                            <li>
+                                <input type="radio" name="13" id="Pink" value="Pink" onclick="changeColor('Pink')">
+                                <label for="Pink">
+                                    <img src="./images/colors/finish-pink-202108.jpeg">
+                                    <span>Pink</span>
+                                </label>
+                            </li>
+                            <br>
+                            <li>
+                                <input type="radio" name="13" id="(product)RED" value="(product)RED" onclick="changeColor('(product)RED')">
+                                <label for="(product)RED">
+                                    <img src="./images/colors/finish-red-202209.jpeg">
+                                    <span>(product)RED</span>
+                                </label>
+                                    
+                            </li>
+                            <br>
+                        </ul>
+                        
+
+                        <form action=" " class="memory">
+                            <div class="title">
+                                <h2>Память</h2>
+                            </div>
+                            <div class="form_radio_btn">
+                                <input id = "iPhone 13 128 GB" type="radio" name="13_1"  checked>
+                                <label id = "13 128 GB" for="iPhone 13 128 GB"> 128 GB  </label>
+                            </div>
+                                    
+                            <div class="form_radio_btn">
+                                <input id = "iPhone 13 256 GB" type="radio" name="13_1">
+                                <label id = "13 256 GB"; for="iPhone 13 256 GB">256 GB  </label>
+                            </div>
+                                    
+                            <div class="form_radio_btn">
+                                <input id = "iPhone 13 512 GB" type="radio" name="13_1" >
+                                <label id = "13 512 GB"  for="iPhone 13 512 GB">512 GB  </label>
+                            </div>
+                        </form>
+                        <br><br><br>
+                        <div class="addButton">
+                            <button onclick="addFunc13()">Добавить в корзину</button>   
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>

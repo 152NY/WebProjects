@@ -1,0 +1,156 @@
+<body>
+    <script>
+        
+        var color = "Space Gray";
+        window.onload = function () {
+            e_iPadPro11();
+        }
+
+        function e_iPadPro11(){
+
+            const memories = ['Wi-Fi 128 GB', 'Wi-Fi 256 GB', 'Wi-Fi 512 GB', 'Wi-Fi 1 TB', 'Wi-Fi 2 TB',  
+                                'Wi-Fi+LTE 128 GB', 'Wi-Fi+LTE 256 GB', 'Wi-Fi+LTE 512 GB', 'Wi-Fi+LTE 1 TB', 'Wi-Fi+LTE 2 TB'];
+            const prices = [75990, 88990, 98990, 108990, 118990, 85990, 98990, 108990, 118990, 128990];
+
+            let inputId = " ";
+            let labelId = " ";
+            
+            for (let j = 0; j < memories.length; j++)
+            {
+                inputId = 'iPad Pro 11 ' + memories[j];
+                document.getElementById(inputId).value = prices[j];
+            }
+            for (let j = 0; j < memories.length; j++)
+            {
+                labelId = ('iPadPro11 ' + memories[j]);
+                document.getElementById(labelId).innerHTML += (prices[j] + "₽");
+            }
+        }
+
+        function addFunciPadPro11() {
+            const deviceiPadPro11 = new Device (
+                document.querySelector('input[name="iPad_Pro11"]:checked ').id,
+                document.querySelector('input[name="iPad_Pro11"]:checked').value,
+                color
+            );
+            arr.push(deviceiPadPro11);
+                    
+            localStorage.setItem("my_models", JSON.stringify(arr));
+            alert("Товар добавлен в корзину");
+        }
+
+        function changeColor(x) {
+            if(x == "Space Gray") 
+            {
+                color = "Space Gray"
+                document.getElementById('iPadPro11_photo').src = "./images/iPad/iPadPro/iPadPro11SG.jpg";
+                return color;
+            }
+            
+            else if(x == "Silver") 
+            {
+                color = "Silver"
+                document.getElementById('iPadPro11_photo').src = "./images/iPad/iPadPro/iPadPro11SL.jpg";
+                return color;
+            }
+            
+            else 
+            {
+                color = "Space Gray"
+                document.getElementById('iPadPro11_photo').src = "./images/iPad/iPadPro/iPadPro11SL.jpg";
+                return color;
+            }
+        }
+    </script>
+
+    <div class="container">
+        <div class = "foreground">    
+            <h1 id="catalog"> iPad Pro 11</h1>
+
+            <div class="item_wide_mac" >
+                <div class="row">
+                    <div class="column">
+                        <img id="iPadPro11_photo" src="./images/iPad/iPadPro/iPadPro11SG.jpg" >
+                    </div>
+                    <div class="column">
+                        <div class="title">
+                            <h2>Цвет</h2>
+                        </div>
+                        <ul name="color" class="colorPicker">
+                            <li>
+                                <input type="radio" name="iPadPro11" id="Space Gray" value="Space Gray" onclick="changeColor('Space Gray')" checked>
+                                <label for="Space Gray">
+                                    <img src="./images/colors/finish-midnight-202209.jpeg">
+                                    <span>Space Gray</span>
+                                </label>
+                            </li>
+                            <br>
+                            <li>
+                                <input type="radio" name="iPadPro11" id="Silver" value="Silver" onclick="changeColor('Silver')">
+                                <label for="Silver">
+                                    <img src="./images/colors/macbook-silver-select-201810_SW_COLOR.jpeg">
+                                    <span>Silver</span>
+                                </label>
+                            </li>
+                            <br>
+                        </ul>
+                        
+
+                        <form action=" " class="memory">
+                            <div class="title">
+                                <h2>Память</h2>
+                            </div>
+                            <div class="form_radio_btn">
+                                <input id = "iPad Pro 11 Wi-Fi 128 GB" type="radio" name="iPad_Pro11"  checked>
+                                <label id = "iPadPro11 Wi-Fi 128 GB" for="iPad Pro 11 Wi-Fi 128 GB"> Wi-Fi <br> 128 GB  </label>
+                            </div>
+                            <div class="form_radio_btn">
+                                <input id = "iPad Pro 11 Wi-Fi 256 GB" type="radio" name="iPad_Pro11" >
+                                <label id = "iPadPro11 Wi-Fi 256 GB" for="iPad Pro 11 Wi-Fi 256 GB"> Wi-Fi <br>256 GB  </label>
+                            </div>
+                            <div class="form_radio_btn">
+                                <input id = "iPad Pro 11 Wi-Fi 512 GB" type="radio" name="iPad_Pro11" >
+                                <label id = "iPadPro11 Wi-Fi 512 GB" for="iPad Pro 11 Wi-Fi 512 GB">Wi-Fi <br>512 GB  </label>
+                            </div>
+                            <div class="form_radio_btn">
+                                <input id = "iPad Pro 11 Wi-Fi 1 TB" type="radio" name="iPad_Pro11" >
+                                <label id = "iPadPro11 Wi-Fi 1 TB" for="iPad Pro 11 Wi-Fi 1 TB">Wi-Fi <br>1 TB  </label>
+                            </div>
+                            <div class="form_radio_btn">
+                                <input id = "iPad Pro 11 Wi-Fi 2 TB" type="radio" name="iPad_Pro11" >
+                                <label id = "iPadPro11 Wi-Fi 2 TB" for="iPad Pro 11 Wi-Fi 2 TB">Wi-Fi<br> 2 TB  </label>
+                            </div>
+
+                            <br><br>
+                            
+                            <div class="form_radio_btn">
+                                <input id = "iPad Pro 11 Wi-Fi+LTE 128 GB" type="radio" name="iPad_Pro11" >
+                                <label id = "iPadPro11 Wi-Fi+LTE 128 GB" for="iPad Pro 11 Wi-Fi+LTE 128 GB">Wi-Fi+LTE <br>128 GB  </label>
+                            </div>
+                            <div class="form_radio_btn">
+                                <input id = "iPad Pro 11 Wi-Fi+LTE 256 GB" type="radio" name="iPad_Pro11" >
+                                <label id = "iPadPro11 Wi-Fi+LTE 256 GB" for="iPad Pro 11 Wi-Fi+LTE 256 GB"> Wi-Fi+LTE <br>256 GB  </label>
+                            </div>
+                            <div class="form_radio_btn">
+                                <input id = "iPad Pro 11 Wi-Fi+LTE 512 GB" type="radio" name="iPad_Pro11" >
+                                <label id = "iPadPro11 Wi-Fi+LTE 512 GB" for="iPad Pro 11 Wi-Fi+LTE 512 GB">Wi-Fi+LTE <br>512 GB  </label>
+                            </div>
+                            <div class="form_radio_btn">
+                                <input id = "iPad Pro 11 Wi-Fi+LTE 1 TB" type="radio" name="iPad_Pro11" >
+                                <label id = "iPadPro11 Wi-Fi+LTE 1 TB" for="iPad Pro 11 Wi-Fi+LTE 1 TB">Wi-Fi+LTE <br>1 TB  </label>
+                            </div>
+                            <div class="form_radio_btn">
+                                <input id = "iPad Pro 11 Wi-Fi+LTE 2 TB" type="radio" name="iPad_Pro11" >
+                                <label id = "iPadPro11 Wi-Fi+LTE 2 TB" for="iPad Pro 11 Wi-Fi+LTE 2 TB">Wi-Fi+LTE <br>2 TB  </label>
+                            </div>
+                        </form>
+                        <br><br>
+                        <div class="addButton">
+                            <button onclick="addFunciPadPro11()">Добавить в корзину</button>   
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>

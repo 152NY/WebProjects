@@ -1,0 +1,156 @@
+<body>
+    <script>
+        
+        var color = "Starlight";
+        window.onload = function () {
+            e_iPadMini();
+        }
+
+        function e_iPadMini(){
+
+            const memories = ['Wi-Fi 64 GB', 'Wi-Fi 256 GB', 'Wi-Fi+LTE 64 GB', 'Wi-Fi+LTE 256 GB'];
+            const prices = [45990, 58990, 55990, 68990];
+
+            let inputId = " ";
+            let labelId = " ";
+            
+            for (let j = 0; j < memories.length; j++)
+            {
+                inputId = 'iPad Mini ' + memories[j];
+                document.getElementById(inputId).value = prices[j];
+            }
+            for (let j = 0; j < memories.length; j++)
+            {
+                labelId = ('iPadMini ' + memories[j]);
+                document.getElementById(labelId).innerHTML += (prices[j] + "₽");
+            }
+        }
+
+        function addFunciPadMini() {
+            const deviceiPadMini = new Device (
+                document.querySelector('input[name="iPad_Mini"]:checked ').id,
+                document.querySelector('input[name="iPad_Mini"]:checked').value,
+                color
+            );
+            arr.push(deviceiPadMini);
+                    
+            localStorage.setItem("my_models", JSON.stringify(arr));
+            alert("Товар добавлен в корзину");
+        }
+
+        function changeColor(x) {
+            if(x == "Space Gray") 
+            {
+                color = "Space Gray"
+                document.getElementById('iPadMini_photo').src = "./images/iPad/iPadMini/iPadMiniSG.jpg";
+                return color;
+            }
+            else if(x == "Purple") 
+            {
+                color = "Purple"
+                document.getElementById('iPadMini_photo').src = "./images/iPad/iPadMini/iPadMiniVL.jpg";
+                return color;
+            }
+            else if(x == "Starlight") 
+            {
+                color = "Starlight"
+                document.getElementById('iPadMini_photo').src = "./images/iPad/iPadMini/iPadMiniSL.jpg";
+                return color;
+            }
+            else if(x == "Pink") 
+            {
+                color = "Pink"
+                document.getElementById('iPadMini_photo').src = "./images/iPad/iPadMini/iPadMiniPK.jpg";
+                return color;
+            }
+            else 
+            {
+                color = "Starlight"
+                document.getElementById('iPadMini_photo').src = "./images/iPad/iPadMini/iPadMiniSL.jpg";
+                return color;
+            }
+        }
+    </script>
+
+    <div class="container">
+        <div class = "foreground">    
+            <h1 id="catalog"> iPad mini</h1>
+
+            <div class="item_wide_mac" >
+                <div class="row">
+                    <div class="column">
+                        <img id="iPadMini_photo" src="./images/iPad/iPadMini/iPadMiniSL.jpg" >
+                    </div>
+                    <div class="column">
+                        <div class="title">
+                            <h2>Цвет</h2>
+                        </div>
+                        <ul name="color" class="colorPicker">
+                            <li>
+                                <input type="radio" name="iPadMini" id="Starlight" value="Starlight" onclick="changeColor('Starlight')" checked>
+                                <label for="Starlight">
+                                    <img src="./images/colors/finish-starlight-202209.jpeg">
+                                    <span>Starlight</span>
+                                </label>
+                            </li>
+                            <br>
+                            <li>
+                                <input type="radio" name="iPadMini" id="Space Gray" value="Space Gray" onclick="changeColor('Space Gray')">
+                                <label for="Space Gray">
+                                    <img src="./images/colors/finish-midnight-202209.jpeg">
+                                    <span>Space Gray</span>
+                                </label>
+                            </li>
+                            <br>
+                            <li>
+                                <input type="radio" name="iPadMini" id="Purple" value="Purple" onclick="changeColor('Purple')">
+                                <label for="Purple">
+                                    <img src="./images/colors/finish-purple-202209.jpeg">
+                                    <span>Purple</span>
+                                </label>
+                            </li>
+                            <br>
+                            <li>
+                                <input type="radio" name="iPadMini" id="Pink" value="Pink" onclick="changeColor('Pink')">
+                                <label for="Pink">
+                                    <img src="./images/colors/finish-pink-202108.jpeg">
+                                    <span>Pink</span>
+                                </label>
+                                    
+                            </li>
+                            <br>
+                        </ul>
+                        
+
+                        <form action=" " class="memory">
+                            <div class="title">
+                                <h2>Память</h2>
+                            </div>
+                            <div class="form_radio_btn">
+                                <input id = "iPad Mini Wi-Fi 64 GB" type="radio" name="iPad_Mini"  checked>
+                                <label id = "iPadMini Wi-Fi 64 GB" for="iPad Mini Wi-Fi 64 GB"> Wi-Fi <br> 64 GB  </label>
+                            </div>
+                            <div class="form_radio_btn">
+                                <input id = "iPad Mini Wi-Fi 256 GB" type="radio" name="iPad_Mini" >
+                                <label id = "iPadMini Wi-Fi 256 GB" for="iPad Mini Wi-Fi 256 GB">Wi-Fi <br> 256 GB  </label>
+                            </div>
+                            <br><br>
+                            <div class="form_radio_btn">
+                                <input id = "iPad Mini Wi-Fi+LTE 64 GB" type="radio" name="iPad_Mini" >
+                                <label id = "iPadMini Wi-Fi+LTE 64 GB" for="iPad Mini Wi-Fi+LTE 64 GB">Wi-Fi+LTE 64 GB  </label>
+                            </div>
+                            <div class="form_radio_btn">
+                                <input id = "iPad Mini Wi-Fi+LTE 256 GB" type="radio" name="iPad_Mini" >
+                                <label id = "iPadMini Wi-Fi+LTE 256 GB" for="iPad Mini Wi-Fi+LTE 256 GB">Wi-Fi+LTE 256 GB  </label>
+                            </div>
+                        </form>
+                        <br><br>
+                        <div class="addButton">
+                            <button onclick="addFunciPadMini()">Добавить в корзину</button>   
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>

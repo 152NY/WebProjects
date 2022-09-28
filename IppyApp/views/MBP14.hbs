@@ -1,0 +1,119 @@
+<body>
+    <script>
+        
+        var color = "Space Gray";
+        window.onload = function () {
+            e_MBP14();
+        }
+
+        function e_MBP14(){
+
+            const memories = ['512 GB', '1 TB'];
+            const prices = [155990, 178990];
+
+            let inputId = " ";
+            let labelId = " ";
+            
+            for (let j = 0; j < memories.length; j++)
+            {
+                inputId = 'MacBook Pro 14 ' + memories[j];
+                document.getElementById(inputId).value = prices[j];
+            }
+            for (let j = 0; j < memories.length; j++)
+            {
+                labelId = ('MBP14 ' + memories[j]);
+                document.getElementById(labelId).innerHTML += (prices[j] + "₽");
+            }
+        }
+
+        function addFuncMBP14() {
+            const deviceMBP14 = new Device (
+                document.querySelector('input[name="MBP_2"]:checked ').id,
+                document.querySelector('input[name="MBP_2"]:checked').value,
+                color
+            );
+            arr.push(deviceMBP14);
+                    
+            localStorage.setItem("my_models", JSON.stringify(arr));
+            alert("Товар добавлен в корзину");
+        }
+
+        function changeColor(x) {
+            if(x == "Space Gray") 
+            {
+                color = "Space Gray"
+                document.getElementById('MBP14_photo').src = "./images/Mac/MBP14/MBP14SG.jpg";
+                return color;
+            }
+            else if(x == "Silver") 
+            {
+                color = "Silver"
+                document.getElementById('MBP14_photo').src = "./images/Mac/MBP14/MBP14SL.jpg";
+                return color;
+            }
+            else 
+            {
+                color = "Space Gray"
+                document.getElementById('MBP14_photo').src = "./images/Mac/MBP14/MBP14SG.jpg";
+                return color;
+            }
+        }
+    </script>
+
+    <div class="container">
+        <div class = "foreground">    
+            <h1 id="catalog"> MacBook Pro 14' </h1> 
+            <div class="item_wide_mac">
+                <div class="row">
+                    <div class="column">
+                        <img class="mac_photo" id="MBP14_photo" src="./images/Mac/MBP14/MBP14SG.jpg" >
+                    </div>
+                    <div class="column">
+                        <div class="title">
+                            <h2>Цвет</h2>
+                        </div>
+                        <ul name="color" class="colorPicker">
+                            <li>
+                                <input type="radio" name="MBP14" id="Space Gray" value="Space Gray" onclick="changeColor('Space Gray')" checked>
+                                <label for="Space Gray">
+                                    <img src="./images/colors/macbook-spacegray-select-20220606_SW_COLOR.jpg">
+                                    <span>Space Gray</span>
+                                </label>
+                            </li>
+                            <br>
+                            <li>
+                                <input type="radio" name="MBP14" id="Silver" value="Silver" onclick="changeColor('Silver')">
+                                <label for="Silver">
+                                    <img src="./images/colors/macbook-silver-select-201810_SW_COLOR.jpeg">
+                                    <span>Silver</span>
+                                </label>
+                            </li>
+                            <br>
+                        </ul>
+                        
+
+                        <form action=" " class="mac_mem">
+                            <div class="title">
+                                <h2>Конфигурация</h2>
+                            </div>
+                                    
+                            <div class="form_radio_btn">
+                                <input id = "MacBook Pro 14 512 GB" type="radio" name="MBP_2" checked >
+                                <label id = "MBP14 512 GB"  for="MacBook Pro 14 512 GB"> M1 Pro (8/14) 512 GB  </label>
+                            </div>
+
+                            <div class="form_radio_btn">
+                                <input id = "MacBook Pro 14 1 TB" type="radio" name="MBP_2">
+                                <label id = "MBP14 1 TB" for= "MacBook Pro 14 1 TB"> M1 Pro (10/16) 1024 GB  </label>
+                            </div>
+                        </form>
+                        <br><br><br>
+                        <div class="addButton">
+                            <button onclick="addFuncMBP14()">Добавить в корзину</button>   
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>

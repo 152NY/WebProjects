@@ -1,0 +1,66 @@
+<div class="container">
+    {{#if user}}
+        <div class="foreground">
+            <h1>Здраствуйте, {{user.name}}</h1>
+            <table>
+                
+
+                <tr>
+                    <td>
+                        <p>Email (Логин)</p>
+                    </td>
+                    <td>
+                        <p>{{user.username}}</p>
+                    </td>
+                </tr>
+
+                
+                <tr>
+                    <td>
+                        <p>Телефон</p>
+                    </td>
+                    <td>
+                        <p>{{user.tel}}</p>
+                    </td>
+                </tr>
+
+                <tr>
+                    <td>
+                        <p>Накопленный кэшбэк:</p>
+                    </td>
+                    <td>
+                        <p>{{user.sum}}</p>
+                    </td>
+                </tr>
+            </table>
+            <script>
+                function User(name, email, tel, sum) {
+                    this.name = name;
+                    this.email = email;
+                    this.tel = tel;
+                    this.sum = sum;
+                }
+                try {
+                    var user = new User(
+                        '{{user.name}}',
+                        '{{user.username}}',
+                        {{user.tel}},
+                        {{user.sum}}
+                    );
+                    console.log(user);
+                    
+                    localStorage.setItem("connected_user", JSON.stringify(user));
+
+                } catch (e){
+                    console.log(e);
+                }
+
+            </script>
+
+        </div>
+    {{else}}
+        <p>Что-то пошло не так...</p>
+    {{/if}}
+</div>
+
+

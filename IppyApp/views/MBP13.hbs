@@ -1,0 +1,119 @@
+<body>
+    <script>
+        
+        var color = "Space Gray";
+        window.onload = function () {
+            e_MBP13();
+        }
+
+        function e_MBP13(){
+
+            const memories = ['256 GB', '512 GB'];
+            const prices = [95990, 108990];
+
+            let inputId = " ";
+            let labelId = " ";
+            
+            for (let j = 0; j < memories.length; j++)
+            {
+                inputId = 'MacBook Pro 13 (M2) ' + memories[j];
+                document.getElementById(inputId).value = prices[j];
+            }
+            for (let j = 0; j < memories.length; j++)
+            {
+                labelId = ('MBP13 ' + memories[j]);
+                document.getElementById(labelId).innerHTML += (prices[j] + "₽");
+            }
+        }
+
+        function addFuncMBP13() {
+            const deviceMBP13 = new Device (
+                document.querySelector('input[name="MBP_1"]:checked ').id,
+                document.querySelector('input[name="MBP_1"]:checked').value,
+                color
+            );
+            arr.push(deviceMBP13);
+                    
+            localStorage.setItem("my_models", JSON.stringify(arr));
+            alert("Товар добавлен в корзину");
+        }
+
+        function changeColor(x) {
+            if(x == "Space Gray") 
+            {
+                color = "Space Gray"
+                document.getElementById('MBP13_photo').src = "./images/Mac/MBP13/MBP13SG.jpg";
+                return color;
+            }
+            else if(x == "Silver") 
+            {
+                color = "Silver"
+                document.getElementById('MBP13_photo').src = "./images/Mac/MBP13/MBP13SL.jpg";
+                return color;
+            }
+            else 
+            {
+                color = "Space Gray"
+                document.getElementById('MBP13_photo').src = "./images/Mac/MBP13/MBP13SG.jpg";
+                return color;
+            }
+        }
+    </script>
+
+    <div class="container">
+        <div class = "foreground">    
+            <h1 id="catalog"> MacBook Pro 13' (M2) </h1> 
+            <div class="item_wide_mac">
+                <div class="row">
+                    <div class="column">
+                        <img class="mac_photo" id="MBP13_photo" src="./images/Mac/MBP13/MBP13SG.jpg" >
+                    </div>
+                    <div class="column">
+                        <div class="title">
+                            <h2>Цвет</h2>
+                        </div>
+                        <ul name="color" class="colorPicker">
+                            <li>
+                                <input type="radio" name="MBP13" id="Space Gray" value="Space Gray" onclick="changeColor('Space Gray')" checked>
+                                <label for="Space Gray">
+                                    <img src="./images/colors/macbook-spacegray-select-20220606_SW_COLOR.jpg">
+                                    <span>Space Gray</span>
+                                </label>
+                            </li>
+                            <br>
+                            <li>
+                                <input type="radio" name="MBP13" id="Silver" value="Silver" onclick="changeColor('Silver')">
+                                <label for="Silver">
+                                    <img src="./images/colors/macbook-silver-select-201810_SW_COLOR.jpeg">
+                                    <span>Silver</span>
+                                </label>
+                            </li>
+                            <br>
+                        </ul>
+                        
+
+                        <form action=" " class="mac_mem">
+                            <div class="title">
+                                <h2>Конфигурация</h2>
+                            </div>
+                            <div class="form_radio_btn">
+                                <input id = "MacBook Pro 13 (M2) 256 GB" type="radio" name="MBP_1"  checked>
+                                <label id = "MBP13 256 GB" for="MacBook Pro 13 (M2) 256 GB"> 8CPU/10GPU 256 GB  </label>
+                            </div>
+                                    
+                                    
+                            <div class="form_radio_btn">
+                                <input id = "MacBook Pro 13 (M2) 512 GB" type="radio" name="MBP_1" >
+                                <label id = "MBP13 512 GB"  for="MacBook Pro 13 (M2) 512 GB"> 8CPU/10GPU 512 GB  </label>
+                            </div>
+                        </form>
+                        <br><br><br>
+                        <div class="addButton">
+                            <button onclick="addFuncMBP13()">Добавить в корзину</button>   
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>

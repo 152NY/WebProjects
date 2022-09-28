@@ -1,0 +1,44 @@
+{{!-- <table>
+    <tr>
+        <td>
+            <p> Object ID </p>
+        </td>
+        <td>
+            <p id="objectID"></p>
+        </td>
+    </tr>
+    <tr>
+        <td>
+            <p> Client's name </p>
+        </td>
+        <td>
+            <p id="clientsName"></p>
+        </td>
+    </tr>
+    <tr>
+        <td>
+            <p>Client's email</p>
+        </td>
+        <td>
+            <p id="clientsEmail"></p>
+        </td>
+    </tr>
+    <tr>
+        <td>
+            <p>Client's phone</p>
+        </td>
+        <td>
+            <p id="clientsTel"></p>
+        </td>
+    </tr>
+</table> --}}
+<script>
+    var person = JSON.parse(localStorage.getItem('person')) || [];
+    document.write(person.object + " " + person.name + " " + person.email + " " + person.tel )
+    
+    //document.getElementById("objectID").innerHTML = person.object;
+    //document.getElementById("clientsName").innerHTML = person.name;
+    //document.getElementById("clientsEmail").innerHTML = person.email;
+    //document.getElementById("clientsTel").innerHTML = person.tel; 
+    
+</script>

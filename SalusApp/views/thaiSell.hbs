@@ -1,0 +1,224 @@
+  {{> navbar}}
+<div class="headerMobile">
+    <h1 id="sellHeadMobile">Villas</h1>
+</div>
+<div class="headerDesktop">
+    <section class="outter option1">
+        <section class="video-container">
+        <img class = "video" src="./images/villaSale.jpeg">
+        <div class="callout">
+            <div class="desc" id="sellHeadDesktop">OUR VILLAS FOR SALE</div>
+        </div>
+        </section>
+    </section>
+</div>
+
+<details class="filter">
+    <summary id="filterThai">Thailand</summary>
+    <br> 
+    <a href="/sell" id="filterAll"> All properties</a>
+    <br><br> 
+    <a href="/spainSell" id="filterSpain">Spain  </a>
+    <br>
+</details>
+
+
+
+
+{{#if todos.length}}
+{{#each todos}}
+   <div class="item">
+        <div class='row'>
+        <div class='column'>
+            <div class="slideshow-container">
+                <div class="mySlides{{this.id}} fade">
+                    <img src="{{this.filePathFirst}}" >
+                </div>
+
+                <div class="mySlides{{this.id}} fade">
+                    <img src="{{this.filePathSecond}}">
+                </div>
+
+                <div class="mySlides{{this.id}} fade">
+                    <img src="{{this.filePathThird}}">
+                </div>
+
+                <div class="mySlides{{this.id}} fade">
+                    <img src="{{this.filePathForth}}">
+                </div>
+
+                <div class="mySlides{{this.id}} fade">
+                    <img src="{{this.filePathFifth}}">
+                </div>
+
+                <div class="mySlides{{this.id}} fade">
+                    <img src="{{this.filePathSixth}}">
+                </div>
+
+                <div class="mySlides{{this.id}} fade">
+                    <img src="{{this.filePathSeventh}}">
+                </div>
+
+                <!-- Next and previous buttons -->
+                <a class="prev" onclick="plusSlides{{this.id}}(-1)">&#10094;</a>
+                <a class="next" onclick="plusSlides{{this.id}}(1)">&#10095;</a>
+                <script>
+                    let slideIndex{{this.id}} = 1;
+                    showSlides{{this.id}}(slideIndex{{this.id}});
+
+                    // Next/previous controls
+                    function plusSlides{{this.id}}(n) {
+                    showSlides{{this.id}}(slideIndex{{this.id}} += n);
+                    }
+
+                    // Thumbnail image controls
+                    function currentSlide{{this.id}}(n) {
+                        showSlides{{this.id}}(slideIndex{{this.id}} = n);
+                    }
+
+                    function showSlides{{this.id}}(n) {
+                        let i;
+                        let slides{{this.id}} = document.getElementsByClassName("mySlides{{this.id}}");
+                        if (n > slides{{this.id}}.length) {slideIndex{{this.id}} = 1} 
+                        if (n < 1) {
+                            slideIndex{{this.id}} = slides{{this.id}}.length
+                        }
+                        for (i = 0; i < slides{{this.id}}.length; i++) {
+                            slides{{this.id}}[i].style.display = "none"; 
+                        }
+                        slides{{this.id}}[slideIndex{{this.id}}-1].style.display = "block"; 
+                    }
+                </script>
+            </div>
+        </div>
+        <div class='column'>
+            <h2 id="Address{{this.id}}">Address</h2>
+            <p> {{this.address}} </p>
+            <hr>
+
+            <h2 id="Price{{this.id}}">Price</h2>
+            <p> {{this.price}}</p>
+            <hr>
+
+            <h2 id="About{{this.id}}">About this property</h2>
+            <p> {{this.description}} Lorem Ipsum is simply dummy text of the printing and typesetting industry. 
+                Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when
+                an unknown printer took a galley of type and scrambled it to make a type specimen book. 
+                It has survived not only five centuries, but also the leap into electronic typesetting, 
+                remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem 
+                Ipsum passages, and more recently with desktop publishing software like Aldus 
+                PageMaker including versions of Lorem Ipsum.</p>
+        </div>
+        <button><a id="reqBtn{{this.id}}" class="button" href="#popupForm"> Request Exposé </a></button>
+        </div>
+    </div>
+    <div id="popupForm" class="overlay">
+        <div class="popup">
+            <div class="input_form">
+                <h2 id="formHeader{{this.id}}">Leave your contact</h2>
+                <form class="go-bottom" action="/msg" method="post" id="form{{this.id}}">
+                    <div>
+                        <input id="object" name="object" type="text" value="{{this.id}}" required>
+                        <label id="messageLabel{{this.id}}" for="object">Property ID</label>
+                    </div>
+                    <div>
+                        <input id="name" name="name" type="text" required>
+                        <label id="nameLabel{{this.id}}" for="name">Your full name</label>
+                    </div>
+                    <div>
+                        <input id="email" name="email" type="text" required>
+                        <label id="emailLabel{{this.id}}" for="email">Your E-mail address</label>
+                    </div>
+                    <div>
+                        <input id="tel" name="tel" type="tel" >
+                        <label id="telLabel{{this.id}}" for="tel">Your phone number</label>
+                    </div>
+                <button id= "reqSend{{this.id}}" type="submit" class="btn">Send</button>
+                </form>
+            </div>
+            <a href="/">
+              <div class="cl-btn-7"></div>
+            </a>
+        </div>
+    </div>
+     <script type="text/javascript">
+        var userLang = localStorage.language
+        if (!userLang) {
+            userLang = navigator.language || navigator.userLanguage;
+            localStorage.language = userLang;
+        }
+        translatorSellAll(userLang);
+
+        function langSelect(){
+            userLang = document.getElementById("lang").value;
+            localStorage.language = userLang;
+            translatorSellAll(userLang);
+        }
+
+        function translatorSellAll (userLang) {
+            var address = "Address" + '{{this.id}}';
+            var price = "Price" + '{{this.id}}';
+            var about = "About" + '{{this.id}}';
+            var reqBtn = "reqBtn" + '{{this.id}}';
+            if (userLang == "de-DE") {
+                //top bar
+                document.getElementById("sellHeadMobile").innerHTML = "Villen";
+                document.getElementById("sellHeadDesktop").innerHTML = "UNSERE VILLEN ZU VERKAUFEN";
+
+                //filter
+                document.getElementById("filterAll").innerHTML = "Alle Eigenschaften";
+                document.getElementById("filterSpain").innerHTML = "Spanien";
+                document.getElementById("filterThai").innerHTML = "Thailand";
+
+
+                //card
+                document.getElementById(address.toString()).innerHTML = "Adresse";
+                document.getElementById(price.toString()).innerHTML = "Preis";    
+                document.getElementById(about.toString()).innerHTML = "Über dieses Objekt";
+                document.getElementById(reqBtn.toString()).innerHTML = "Exposé anfordern";
+
+                //popup menu
+                document.getElementById("formHeader{{this.id}}").innerHTML = "Hinterlassen Sie uns Informationen über Sie";
+                document.getElementById("nameLabel{{this.id}}").innerHTML = "Ihr vollständiger Name";
+                document.getElementById("emailLabel{{this.id}}").innerHTML = "Deine E-Mail";
+                document.getElementById("telLabel{{this.id}}").innerHTML = "Deine Telefonnummer";
+                document.getElementById("messageLabel{{this.id}}").innerHTML = "Object ID";
+                document.getElementById("reqSend{{this.id}}").innerHTML = "Senden";
+            
+            }
+            else if (userLang == "ru" || userLang == "ru-RU") {
+                //top bar
+                document.getElementById("sellHeadMobile").innerHTML = "Виллы";
+                document.getElementById("sellHeadDesktop").innerHTML = "НАШИ ВИЛЛЫ НА ПРОДАЖУ";
+
+                //filter
+                document.getElementById("filterAll").innerHTML = "Все объекты";
+                document.getElementById("filterSpain").innerHTML = "Испания";
+                document.getElementById("filterThai").innerHTML = "Тайланд";
+
+                //card
+                document.getElementById(address.toString()).innerHTML = "Адрес";
+                document.getElementById(price.toString()).innerHTML = "Стоимость";
+                document.getElementById(about.toString()).innerHTML = "Об этом объекте";
+                document.getElementById(reqBtn.toString()).innerHTML = "Запросить данные";
+
+                //popup menu
+                document.getElementById("formHeader{{this.id}}").innerHTML = "Оставьте нам информацию о Вас";
+                document.getElementById("nameLabel{{this.id}}").innerHTML = "Ваше полное имя";
+                document.getElementById("emailLabel{{this.id}}").innerHTML = "Ваш E-mail";
+                document.getElementById("telLabel{{this.id}}").innerHTML = "Ваш номер телефона";
+                document.getElementById("messageLabel{{this.id}}").innerHTML = "ID Объекта";
+                document.getElementById("reqSend{{this.id}}").innerHTML = "Отправить";
+                
+                //document.getElementById("emptyMsg").innerHTML = "Сейчас эта страница пуста. Посетите её позже...";
+            } 
+            else { console.log("Global");}
+        }
+    </script>
+
+{{/each}}
+
+{{else}}
+<h2 id="emptyMsg">This page is empty now. Visit it later...</h2>
+
+{{/if}}

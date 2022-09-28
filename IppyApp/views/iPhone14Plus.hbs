@@ -1,0 +1,168 @@
+<body>
+    <script>
+        var color = "Starlight";
+        window.onload = function () {
+            e_14Plus();
+        }
+
+        function e_14Plus(){
+
+            const memories = ['128 GB', '256 GB', '512 GB'];
+            const prices = [87990, 99990, 121990];
+
+            let inputId = " ";
+            let labelId = " ";
+            
+            for (let j = 0; j < memories.length; j++)
+            {
+                inputId = 'iPhone 14 Plus ' + memories[j];
+                console.log(inputId)
+                document.getElementById(inputId).value = prices[j];
+            }
+            for (let j = 0; j < memories.length; j++)
+            {
+                labelId = ('14 Plus ' + memories[j]);
+                console.log(labelId)
+                document.getElementById(labelId).innerHTML += (prices[j] + "₽");
+            }
+        }
+
+        function addFunc14Plus() {
+            const device14p = new Device (
+                document.querySelector('input[name="14_2"]:checked ').id,
+                document.querySelector('input[name="14_2"]:checked').value,
+                color
+            );
+            arr.push(device14p);
+                    
+            localStorage.setItem("my_models", JSON.stringify(arr));
+            alert("Товар добавлен в корзину");
+        }
+
+        function changeColor(x) {
+            if (x == "Blue") 
+            {
+                color = "Blue"
+                document.getElementById('14_plus_photo').src = "./images/iPhones/14Plus/14PlusLB.jpg";
+                return color;
+            } 
+            else if(x == "Midnight") 
+            {
+                color = "Midnight"
+                document.getElementById('14_plus_photo').src = "./images/iPhones/14Plus/14PlusBL.jpg";
+                return color;
+            }
+            else if(x == "Purple") 
+            {
+                color = "Purple"
+                document.getElementById('14_plus_photo').src = "./images/iPhones/14Plus/14PlusVL.jpg";
+                return color;
+            }
+            else if(x == "Starlight") 
+            {
+                color = "Starlight"
+                document.getElementById('14_plus_photo').src = "./images/iPhones/14Plus/14PlusWH.jpg";
+                return color;
+            }
+            else if(x == "(product)RED") 
+            {
+                color = "(product)RED"
+                document.getElementById('14_plus_photo').src = "./images/iPhones/14Plus/14PlusPR.jpg";
+                return color;
+            }
+            else 
+            {
+                color = "Starlight"
+                document.getElementById('14_plus_photo').src = "./images/iPhones/14Plus/14PlusWH.jpg";
+                return color;
+            }
+        }
+    </script>
+
+    <div class="container">
+        <div class = "foreground">    
+            <h1 id="catalog"> iPhone 14 Plus</h1>
+
+            <div class="item_wide" >
+                <div class="row">
+                    <div class="column">
+                        <img id="14_plus_photo" src="./images/iPhones/14Plus/14PlusWH.jpg" >
+                    </div>
+                    <div class="column">
+                        <div class="title">
+                            <h2>Цвет</h2>
+                        </div>
+                        <ul name="color" class="colorPicker">
+                            <li>
+                                <input type="radio" name="14Plus" id="Starlight" value="Starlight" onclick="changeColor('Starlight')" checked>
+                                <label for="Starlight">
+                                    <img src="./images/colors/finish-starlight-202209.jpeg">
+                                    <span>Starlight</span>
+                                </label>
+                            </li>
+                            <br>
+                            <li>
+                                <input type="radio" name="14Plus" id="Midnight" value="Midnight" onclick="changeColor('Midnight')">
+                                <label for="Midnight">
+                                    <img src="./images/colors/finish-midnight-202209.jpeg">
+                                    <span>Midnight</span>
+                                </label>
+                            </li>
+                            <br>
+                            <li>
+                                <input type="radio" name="14Plus" id="Blue" value="Blue" onclick="changeColor('Blue')">
+                                <label for="Blue">
+                                    <img src="./images/colors/finish-blue-202209.jpeg">
+                                    <span>Blue</span>
+                                </label>
+                            </li>
+                            <br>
+                            <li>
+                                <input type="radio" name="14Plus" id="Purple" value="Purple" onclick="changeColor('Purple')">
+                                <label for="Purple">
+                                    <img src="./images/colors/finish-purple-202209.jpeg">
+                                    <span>Purple</span>
+                                </label>
+                            </li>
+                            <br>
+                            <li>
+                                <input type="radio" name="14Plus" id="(product)RED" value="(product)RED" onclick="changeColor('(product)RED')">
+                                <label for="(product)RED">
+                                    <img src="./images/colors/finish-red-202209.jpeg">
+                                    <span>(product)RED</span>
+                                </label>
+                                    
+                            </li>
+                            <br>
+                        </ul>
+                        
+
+                        <form action=" " class="memory">
+                            <div class="title">
+                                <h2>Память</h2>
+                            </div>
+                            <div class="form_radio_btn">
+                                <input id = "iPhone 14 Plus 128 GB" type="radio" name="14_2"  checked>
+                                <label id = "14 Plus 128 GB" for="iPhone 14 Plus 128 GB"> 128 GB  </label>
+                            </div>
+                                    
+                            <div class="form_radio_btn">
+                                <input id = "iPhone 14 Plus 256 GB" type="radio" name="14_2">
+                                <label id = "14 Plus 256 GB"; for="iPhone 14 Plus 256 GB">256 GB  </label>
+                            </div>
+                                    
+                            <div class="form_radio_btn">
+                                <input id = "iPhone 14 Plus 512 GB" type="radio" name="14_2" >
+                                <label id = "14 Plus 512 GB"  for="iPhone 14 Plus 512 GB">512 GB  </label>
+                            </div>
+                        </form>
+                        <br><br><br>
+                        <div class="addButton">
+                            <button onclick="addFunc14Plus()">Добавить в корзину</button>   
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>

@@ -1,0 +1,141 @@
+<body>
+    <script>
+        
+        var color = "Starlight";
+        window.onload = function () {
+            e_13STD();
+        }
+
+        function e_13STD(){
+
+            const memories = ['64 GB', '128 GB', '256 GB'];
+            const prices = [35990, 48990, 51990];
+
+            let inputId = " ";
+            let labelId = " ";
+            
+            for (let j = 0; j < memories.length; j++)
+            {
+                inputId = 'iPhone SE ' + memories[j];
+                document.getElementById(inputId).value = prices[j];
+            }
+            for (let j = 0; j < memories.length; j++)
+            {
+                labelId = ('SE ' + memories[j]);
+                document.getElementById(labelId).innerHTML += (prices[j] + "₽");
+            }
+        }
+
+        function addFuncSE() {
+            const deviceSE = new Device (
+                document.querySelector('input[name="SE_1"]:checked ').id,
+                document.querySelector('input[name="SE_1"]:checked').value,
+                color
+            );
+            arr.push(deviceSE);
+                    
+            localStorage.setItem("my_models", JSON.stringify(arr));
+            alert("Товар добавлен в корзину");
+        }
+
+        function changeColor(x) {
+            
+            if(x == "Midnight") 
+            {
+                color = "Midnight"
+                document.getElementById('SE_photo').src = "./images/iPhones/SE/SEBK.jpg";
+                return color;
+            }
+            
+            else if(x == "Starlight") 
+            {
+                color = "Starlight"
+                document.getElementById('SE_photo').src = "./images/iPhones/SE/SEWH.jpg";
+                return color;
+            }
+            else if(x == "(product)RED") 
+            {
+                color = "(product)RED"
+                document.getElementById('SE_photo').src = "./images/iPhones/SE/SEPR.jpg";
+                return color;
+            }
+            else 
+            {
+                color = "Starlight"
+                document.getElementById('SE_photo').src = "./images/iPhones/SE/SEWH.jpg";
+                return color;
+            }
+        }
+    </script>
+
+    <div class="container">
+        <div class = "foreground">    
+            <h1 id="catalog"> iPhone SE </h1>
+
+            <div class="item_wide" >
+                <div class="row">
+                    <div class="column">
+                        <img id="SE_photo" src="./images/iPhones/SE/SEWH.jpg" >
+                    </div>
+                    <div class="column">
+                        <div class="title">
+                            <h2>Цвет</h2>
+                        </div>
+                        <ul name="color" class="colorPicker">
+                            <li>
+                                <input type="radio" name="SE" id="Starlight" value="Starlight" onclick="changeColor('Starlight')" checked>
+                                <label for="Starlight">
+                                    <img src="./images/colors/finish-starlight-202209.jpeg">
+                                    <span>Starlight</span>
+                                </label>
+                            </li>
+                            <br>
+                            <li>
+                                <input type="radio" name="SE" id="Midnight" value="Midnight" onclick="changeColor('Midnight')">
+                                <label for="Midnight">
+                                    <img src="./images/colors/finish-midnight-202209.jpeg">
+                                    <span>Midnight</span>
+                                </label>
+                            </li>
+                            <br>
+                            
+                            <li>
+                                <input type="radio" name="SE" id="(product)RED" value="(product)RED" onclick="changeColor('(product)RED')">
+                                <label for="(product)RED">
+                                    <img src="./images/colors/finish-red-202209.jpeg">
+                                    <span>(product)RED</span>
+                                </label>
+                                    
+                            </li>
+                            <br>
+                        </ul>
+                        
+
+                        <form action=" " class="memory">
+                            <div class="title">
+                                <h2>Память</h2>
+                            </div>
+                            <div class="form_radio_btn">
+                                <input id = "iPhone SE 64 GB" type="radio" name="SE_1" >
+                                <label id = "SE 64 GB"  for="iPhone SE 64 GB">64 GB  </label>
+                            </div>
+                            <div class="form_radio_btn">
+                                <input id = "iPhone SE 128 GB" type="radio" name="SE_1"  checked>
+                                <label id = "SE 128 GB" for="iPhone SE 128 GB"> 128 GB  </label>
+                            </div>
+                                    
+                            <div class="form_radio_btn">
+                                <input id = "iPhone SE 256 GB" type="radio" name="SE_1">
+                                <label id = "SE 256 GB"; for="iPhone SE 256 GB">256 GB  </label>
+                            </div>
+                        </form>
+                        <br><br><br>
+                        <div class="addButton">
+                            <button onclick="addFuncSE()">Добавить в корзину</button>   
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>

@@ -1,0 +1,51 @@
+<script src="./js/gmaps.js"></script>
+<script>
+  var form = document.getElementById('map-form');
+  function pageButtonClick(){
+    var pagebutton= document.getElementById("map-button");
+    pagebutton.click();
+  }
+</script>
+{{>navbar}}
+<div class="about">
+    <div class="optionsTableHeader _anim-items">
+        <h1 id = "welcomeTextHeader">MAP</h1>
+    </div>
+
+    <div class="box _anim-items" id="map">
+        <script>
+            var map = new GMaps({
+                div: '#map',
+                lat: 36.5444,
+                lng: 31.9954
+            });
+            const quantityObj = {{todos.length}};
+        </script>
+
+        {{#if todos.length}}
+        {{#each todos}}
+        
+        <script>
+            map.addMarker({
+                lat: {{this.lat}},
+                lng: {{this.lng}},
+                title: '{{this.id}}',
+                click: function(e{{this.id}}) {
+                  document.getElementById('objID').value = '{{this.id}}';
+                  pageButtonClick();
+                }
+            });
+        </script>
+        
+        {{/each}}
+
+        {{else}}
+        {{/if}}
+            
+    </div>
+    <form class="hidden_form" method="post"  action="/viewOnMap" id="map-form">
+        <input type="text" hidden="true" name="objID" id="objID">
+        <button type="submit" hidden="true" id="map-button">test</button>
+    </form>
+</div>
+<script src="./js/animation.js"></script>

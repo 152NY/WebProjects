@@ -1,0 +1,147 @@
+<body>
+    <script>
+        
+        var color = "Starlight";
+        window.onload = function () {
+            e_AWS8();
+        }
+
+        function e_AWS8(){
+
+            const memories = ['41 mm', '45 mm'];
+            const prices = [45990, 48990];
+
+            let inputId = " ";
+            let labelId = " ";
+            
+            for (let j = 0; j < memories.length; j++)
+            {
+                inputId = 'Apple Watch S8 ' + memories[j];
+                document.getElementById(inputId).value = prices[j];
+            }
+            for (let j = 0; j < memories.length; j++)
+            {
+                labelId = ('AWS8 ' + memories[j]);
+                document.getElementById(labelId).innerHTML += (prices[j] + "₽");
+            }
+        }
+
+        function addFuncAWS8() {
+            const deviceAWS8 = new Device (
+                document.querySelector('input[name="AW_S8"]:checked ').id,
+                document.querySelector('input[name="AW_S8"]:checked').value,
+                color
+            );
+            arr.push(deviceAWS8);
+                    
+            localStorage.setItem("my_models", JSON.stringify(arr));
+            alert("Товар добавлен в корзину");
+        }
+
+        function changeColor(x) {
+            if(x == "Midnight") 
+            {
+                color = "Midnight"
+                document.getElementById('AWS8_photo').src = "./images/AW/AWS8/AWS8MD.jpg";
+                return color;
+            }
+            else if(x == "Silver") 
+            {
+                color = "Silver"
+                document.getElementById('AWS8_photo').src = "./images/AW/AWS8/AWS8WH.jpg";
+                return color;
+            }
+            else if(x == "Starlight") 
+            {
+                color = "Starlight"
+                document.getElementById('AWS8_photo').src = "./images/AW/AWS8/AWS8SL.jpg";
+                return color;
+            }
+            else if(x == "(product)RED") 
+            {
+                color = "(product)RED"
+                document.getElementById('AWS8_photo').src = "./images/AW/AWS8/AWS8PR.jpg";
+                return color;
+            }
+            else 
+            {
+                color = "Starlight"
+                document.getElementById('AWS8_photo').src = "./images/AW/AWS8/AWS8SL.jpg";
+                return color;
+            }
+        }
+    </script>
+
+    <div class="container">
+        <div class = "foreground">    
+            <h1 id="catalog"> Series 8</h1>
+
+            <div class="item_wide_mac" >
+                <div class="row">
+                    <div class="column">
+                        <img id="AWS8_photo" src="./images/AW/AWS8/AWS8SL.jpg" >
+                    </div>
+                    <div class="column">
+                        <div class="title">
+                            <h2>Цвет</h2>
+                        </div>
+                        <ul name="color" class="colorPicker">
+                            <li>
+                                <input type="radio" name="AWS8" id="Starlight" value="Starlight" onclick="changeColor('Starlight')" checked>
+                                <label for="Starlight">
+                                    <img src="./images/colors/finish-starlight-202209.jpeg">
+                                    <span>Starlight</span>
+                                </label>
+                            </li>
+                            <br>
+                            <li>
+                                <input type="radio" name="AWS8" id="Midnight" value="Midnight" onclick="changeColor('Midnight')">
+                                <label for="Midnight">
+                                    <img src="./images/colors/finish-midnight-202209.jpeg">
+                                    <span>Midnight</span>
+                                </label>
+                            </li>
+                            <br>
+                            <li>
+                                <input type="radio" name="AWS8" id="Silver" value="Silver" onclick="changeColor('Silver')">
+                                <label for="Silver">
+                                    <img src="./images/colors/macbook-silver-select-201810_SW_COLOR.jpeg">
+                                    <span>Silver</span>
+                                </label>
+                            </li>
+                            <br>
+                            <li>
+                                <input type="radio" name="AWS8" id="(product)RED" value="(product)RED" onclick="changeColor('(product)RED')">
+                                <label for="(product)RED">
+                                    <img src="./images/colors/finish-red-202209.jpeg">
+                                    <span>(product)RED</span>
+                                </label>
+                                    
+                            </li>
+                            <br>
+                        </ul>
+                        
+
+                        <form action=" " class="memory">
+                            <div class="title">
+                                <h2>Размер</h2>
+                            </div>
+                            <div class="form_radio_btn">
+                                <input id = "Apple Watch S8 41 mm" type="radio" name="AW_S8"  checked>
+                                <label id = "AWS8 41 mm" for="Apple Watch S8 41 mm"> 41mm  </label>
+                            </div>
+                            <div class="form_radio_btn">
+                                <input id = "Apple Watch S8 45 mm" type="radio" name="AW_S8" >
+                                <label id = "AWS8 45 mm" for="Apple Watch S8 45 mm"> 45mm  </label>
+                            </div>
+                        </form>
+                        <br><br><br>
+                        <div class="addButton">
+                            <button onclick="addFuncAWS8()">Добавить в корзину</button>   
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>

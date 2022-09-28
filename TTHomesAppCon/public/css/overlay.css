@@ -1,0 +1,239 @@
+.overlay {
+    position: fixed;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background: rgba(0, 0, 0, 0.758);
+    transition: opacity 1s;
+    opacity: 0; 
+    visibility: hidden;
+    z-index: 20;
+    animation: move2 .1s ease-in-out;
+  }
+  @keyframes move2 {
+    from {bottom: -50%;}
+    to {bottom: 0%;}
+  }
+
+
+  .overlay:target {
+    visibility: visible;
+    opacity: 1;
+  }
+  
+  .popup {
+    z-index: 20;
+    border: #1841554f solid 2px;
+    margin: 70px auto;
+    padding: 20px;
+    background: rgba(255, 255, 255, 0.89);
+    /* border-radius: 15px; */
+    width: 60%;
+    position: relative;
+    transition: move2 1s ease-in-out;
+    align-items: center;
+  }
+  
+ .content {
+    max-height: 60%;
+    overflow: auto;
+  }
+  
+  /* @media screen and (max-width: 700px){
+    .box{
+      width: 80%;
+    }
+    .popup{
+      width: 80%;
+    }
+  } */
+
+@media (max-width: 700px) {
+    .overlay {
+      position: fixed;
+      top: 0;
+      bottom: 0%;
+      left: 0;
+      right: 0;
+      background: rgba(0, 0, 0, 0.7);
+      z-index: 20;
+      animation: move3 .1s ease-in-out;
+    }
+    .popup{
+      /* border-radius: 16px; */
+      position: fixed;
+      left: 0;
+      bottom: 0%;
+      width: 99%;
+      margin-left: 0.5%;
+      margin-right: 0.5%;
+      animation: move2 1s ease-in-out;
+      z-index: 2;
+  }
+  @keyframes move3 {
+    from {visibility: -100%;}
+    to {bottom: 0%;}
+  }
+}
+  
+.input_form form {
+    width: 90%;
+    float: center;
+    margin-left: 5%;
+    margin-right: 5%;
+    margin-top: 5%;
+    /* margin: 20px; */
+}
+
+.input_form form p {
+  color: #2c2b2bee;
+  margin-bottom: 2px;
+  margin-top: 8px;
+}
+  
+.input_form form > div {
+    position: relative;
+    text-align: center;
+    /* overflow: hidden; */
+}
+  
+.input_form form input, form textarea {
+    margin-bottom: 10px;
+    /* border-radius: 16px; */
+    width: 100%;
+    border: 2px solid gray;
+    background: none;
+    position: relative;
+    top: 0;
+    left: 0;
+    z-index: 1;
+    padding: 8px 12px;
+    outline: 0;
+   
+}
+
+  /* form input:valid, form textarea:valid {
+    background: white;
+  } */
+
+.input_form form input:focus, form textarea:focus {
+  /* border-radius: 16px; */
+  border-color: #808AA0;
+  
+}
+  
+.input_form form input:focus + label, form textarea:focus + label {
+  /* border-radius: 16px; */
+    margin-top: 1px;
+    background: #184155;
+    color: rgb(255, 255, 255);
+    font-size: 70%;
+    padding: 1px 6px;
+    z-index: 2;
+    text-transform: uppercase;
+    font-size: 10px;
+    transition: 0.5s;
+    
+}
+  
+.input_form form label {
+  /* border-radius: 16px; */
+    margin-top: 1%;
+    /* transition: background 0.2s, color 0.2s, top 0.2s, bottom 0.2s, right 0.2s, left 0.2s; */
+    position:absolute;
+    color: #999;
+    padding: 7px 6px;
+    font-size: 14px;
+}
+  
+.input_form form textarea {
+    display: block;
+    resize: vertical;
+}
+  
+  
+.input_form form.go-bottom input, form.go-bottom textarea {
+    padding: 12px 12px 12px 12px;
+}
+  
+.input_form form.go-bottom label {
+    top: 0;
+    bottom: 0;
+    left: 25%;
+    width: 50%;
+}
+  
+.input_form form.go-bottom input:focus, form.go-bottom textarea:focus {
+    margin: 1px;
+    padding: 4px 6px 20px 6px;
+    
+}
+  
+.input_form form.go-bottom input:focus + label, form.go-bottom textarea:focus + label {
+    top: 100%;
+    margin-top: -16px;
+    
+}
+
+.input_form button {
+  width: 100%;
+  background: rgba(141, 198, 215, 0.541);
+  border: 0;
+  /* border-radius: 16px; */
+  color: #184155;
+  cursor: pointer;
+  display: inline-block;
+  font-size: 12px;
+  font-weight: 600;
+  line-height: 2.5;
+  outline: transparent;
+  text-align: center;
+  text-decoration: none;
+  transition: box-shadow .2s ease-in-out;
+  user-select: none;
+  -webkit-user-select: none;
+  touch-action: manipulation;
+  
+}
+
+
+  
+.er {
+    margin-left: 5%;
+    margin-right: 5%;
+}
+  
+  
+.close {
+    width: 30%;
+}
+  
+.input_form p{
+    font-size: 22px;
+    color: #909090;
+}
+  
+.main-block_buttons button {
+    border: #FFFFFF;
+    background-color: #FFFFFF;
+}
+
+.cancel_form {
+    margin-left: 1%;
+    width: 30%;
+    border-radius: 16px;
+    font-family: -apple-system,system-ui,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;
+    font-size: 16px;
+}
+  
+#popup img {
+    width: 50%;
+    margin-left: 25%;
+    margin-right: 25%;
+}
+
+.transfer {
+    padding: 0 2% 0 2%;
+    z-index: 2;
+}

@@ -1,0 +1,118 @@
+{{> navbar}}
+<script>
+  var form = document.getElementById('map-form');
+  function pageButtonClick(){
+    var pagebutton= document.getElementById("map-button");
+    pagebutton.click();
+  }
+</script>
+<script src="./js/gmaps.js"></script>
+<section class="outter option1">
+<section class="video-container">
+  <video id="lv"  class = "video" src="./images/logos/boat.mp4" autoplay loop playsinline muted></video>
+  <div class="callout">
+    <div class="logoTT">
+        <img src="./images/logos/tthomes-logo.png" >
+    </div>
+    <br><br>
+    <div class="desc" id="desc">YOUR PERSONAL REAL ESTATE AGENCY</div>
+    
+  </div>
+</section>
+</section>
+
+<div class="optionsTable">
+  <div class="optionsTableHeader">
+    <h1 id = "optionsTableHeader">OUR PROPERTIES</h1>
+  </div>
+  <div class="optionsTableCards">
+     <div class='row'>
+        <div class="optionsItem">
+          <a href="/villas">
+            <img src="./images/villas.jpg">
+            <h2>Villas</h2>
+            {{!-- <p>Lorem ipsum dolor, cumque ullam dolorum blanditiis.</p> --}}
+          </a>
+        </div>
+        <div class="optionsItem">
+          <a href="/townhouses">
+            <img src="./images/townhouses.jpg">
+            <h2>Townhouses</h2>
+            {{!-- <p>Lorem ipsum dolor, cumque ullam dolorum blanditiis.</p> --}}
+          </a>
+        </div>
+        <div class="optionsItem">
+          <a href="/flats">
+            <img src="./images/flats.jpg">
+            <h2>Flats</h2>
+            {{!-- <p>Lorem ipsum dolor, cumque ullam dolorum blanditiis.</p> --}}
+          </a>
+        </div>
+      </div>
+  </div>
+</div>
+<div class="map">
+  <div class="optionsTableHeader">
+    <h1 id = "welcomeTextHeader">Look at our objects in map</h1>
+  </div>
+
+  <div class="box" id="map">
+        <script>
+            //var form = document.getElementById('map-form');
+            var map = new GMaps({
+                div: '#map',
+                lat: 36.5444,
+                lng: 31.9954
+            });
+            const quantityObj = {{todos.length}};
+            console.log(quantityObj)
+        </script>
+
+        {{#if todos.length}}
+        {{#each todos}}
+        
+        <script>
+            map.addMarker({
+                lat: {{this.lat}},
+                lng: {{this.lng}},
+                title: '{{this.id}}',
+                click: function(e{{this.id}}) {
+                  document.getElementById('objID').value = '{{this.id}}';
+                  pageButtonClick();
+                }
+            });
+        </script>
+        
+        {{/each}}
+
+        {{else}}
+        {{/if}}
+       
+    </div>
+</div>
+<form class="hidden_form" method="post"  action="/viewOnMap" id="map-form">
+  <input type="text" hidden="true" name="objID" id="objID">
+  <button type="submit" hidden="true" id="map-button">test</button>
+</form>
+
+</div>
+
+<br><br>
+{{!-- <div class="langMenu">
+  <hr>
+  <table>
+    <tr>
+      <td>
+        <p id="langSelect">Select language</p>
+      </td>
+      <td>
+          <select name="lang" id="lang" onchange="langSelect()">
+            <option value="">set language</option>
+            <option value="en-US">English</option>
+            <option value="de-DE">Deutsch</option>
+            <option value="ru">Русский</option>
+          </select>
+      </td>
+    </tr>
+  </table>
+</div> --}}

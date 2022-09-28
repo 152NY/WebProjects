@@ -1,0 +1,170 @@
+<body>
+    <script>
+        
+        var color = "Starlight";
+        window.onload = function () {
+            e_iPadAir();
+        }
+
+        function e_iPadAir(){
+
+            const memories = ['Wi-Fi 64 GB', 'Wi-Fi 256 GB', 'Wi-Fi+LTE 64 GB', 'Wi-Fi+LTE 256 GB'];
+            const prices = [55990, 68990, 67990, 78990];
+
+            let inputId = " ";
+            let labelId = " ";
+            
+            for (let j = 0; j < memories.length; j++)
+            {
+                inputId = 'iPad Air ' + memories[j];
+                document.getElementById(inputId).value = prices[j];
+            }
+            for (let j = 0; j < memories.length; j++)
+            {
+                labelId = ('iPadAir ' + memories[j]);
+                document.getElementById(labelId).innerHTML += (prices[j] + "₽");
+            }
+        }
+
+        function addFunciPadAir() {
+            const deviceiPadAir = new Device (
+                document.querySelector('input[name="iPad_Air"]:checked ').id,
+                document.querySelector('input[name="iPad_Air"]:checked').value,
+                color
+            );
+            arr.push(deviceiPadAir);
+                    
+            localStorage.setItem("my_models", JSON.stringify(arr));
+            alert("Товар добавлен в корзину");
+        }
+
+        function changeColor(x) {
+            if (x == "Blue") 
+            {
+                color = "Blue"
+                document.getElementById('iPadAir_photo').src = "./images/iPad/iPadAir/iPadAirBL.jpg";
+                return color;
+            } 
+            else if(x == "Space Gray") 
+            {
+                color = "Space Gray"
+                document.getElementById('iPadAir_photo').src = "./images/iPad/iPadAir/iPadAirSG.jpg";
+                return color;
+            }
+            else if(x == "Purple") 
+            {
+                color = "Purple"
+                document.getElementById('iPadAir_photo').src = "./images/iPad/iPadAir/iPadAirVL.jpg";
+                return color;
+            }
+            else if(x == "Starlight") 
+            {
+                color = "Starlight"
+                document.getElementById('iPadAir_photo').src = "./images/iPad/iPadAir/iPadAirSL.jpg";
+                return color;
+            }
+            else if(x == "Pink") 
+            {
+                color = "Pink"
+                document.getElementById('iPadAir_photo').src = "./images/iPad/iPadAir/iPadAirPK.jpg";
+                return color;
+            }
+            else 
+            {
+                color = "Starlight"
+                document.getElementById('iPadAir_photo').src = "./images/iPad/iPadAir/iPadAirSL.jpg";
+                return color;
+            }
+        }
+    </script>
+
+    <div class="container">
+        <div class = "foreground">    
+            <h1 id="catalog"> iPad Air (5th. gen)</h1>
+
+            <div class="item_wide_mac" >
+                <div class="row">
+                    <div class="column">
+                        <img id="iPadAir_photo" src="./images/iPad/iPadAir/iPadAirSL.jpg" >
+                    </div>
+                    <div class="column">
+                        <div class="title">
+                            <h2>Цвет</h2>
+                        </div>
+                        <ul name="color" class="colorPicker">
+                            <li>
+                                <input type="radio" name="iPadAir" id="Starlight" value="Starlight" onclick="changeColor('Starlight')" checked>
+                                <label for="Starlight">
+                                    <img src="./images/colors/finish-starlight-202209.jpeg">
+                                    <span>Starlight</span>
+                                </label>
+                            </li>
+                            <br>
+                            <li>
+                                <input type="radio" name="iPadAir" id="Space Gray" value="Space Gray" onclick="changeColor('Space Gray')">
+                                <label for="Space Gray">
+                                    <img src="./images/colors/finish-midnight-202209.jpeg">
+                                    <span>Space Gray</span>
+                                </label>
+                            </li>
+                            <br>
+                            <li>
+                                <input type="radio" name="iPadAir" id="Blue" value="Blue" onclick="changeColor('Blue')">
+                                <label for="Blue">
+                                    <img src="./images/colors/finish-blue-202209.jpeg">
+                                    <span>Blue</span>
+                                </label>
+                            </li>
+                            <br>
+                            <li>
+                                <input type="radio" name="iPadAir" id="Purple" value="Purple" onclick="changeColor('Purple')">
+                                <label for="Purple">
+                                    <img src="./images/colors/finish-purple-202209.jpeg">
+                                    <span>Purple</span>
+                                </label>
+                            </li>
+                            <br>
+                            <li>
+                                <input type="radio" name="iPadAir" id="Pink" value="Pink" onclick="changeColor('Pink')">
+                                <label for="Pink">
+                                    <img src="./images/colors/finish-pink-202108.jpeg">
+                                    <span>Pink</span>
+                                </label>
+                                    
+                            </li>
+                            <br>
+                        </ul>
+                        
+
+                        <form action=" " class="memory">
+                            <div class="title">
+                                <h2>Память</h2>
+                            </div>
+                            <div class="form_radio_btn">
+                                <input id = "iPad Air Wi-Fi 64 GB" type="radio" name="iPad_Air"  checked>
+                                <label id = "iPadAir Wi-Fi 64 GB" for="iPad Air Wi-Fi 64 GB"> Wi-Fi <br> 64 GB  </label>
+                            </div>
+                            <div class="form_radio_btn">
+                                <input id = "iPad Air Wi-Fi 256 GB" type="radio" name="iPad_Air" >
+                                <label id = "iPadAir Wi-Fi 256 GB" for="iPad Air Wi-Fi 256 GB"> Wi-Fi <br>256 GB  </label>
+                            </div>
+                            <br><br>
+                            <div class="form_radio_btn">
+                                <input id = "iPad Air Wi-Fi+LTE 64 GB" type="radio" name="iPad_Air" >
+                                <label id = "iPadAir Wi-Fi+LTE 64 GB" for="iPad Air Wi-Fi+LTE 64 GB"> Wi-Fi+LTE  64 GB  </label>
+                            </div>
+                            <div class="form_radio_btn">
+                                <input id = "iPad Air Wi-Fi+LTE 256 GB" type="radio" name="iPad_Air" >
+                                <label id = "iPadAir Wi-Fi+LTE 256 GB" for="iPad Air Wi-Fi+LTE 256 GB"> Wi-Fi+LTE  256 GB  </label>
+                            </div>
+                        </form>
+                        <br><br>
+                        <div class="addButton">
+                            <button onclick="addFunciPadAir()">Добавить в корзину</button>   
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>

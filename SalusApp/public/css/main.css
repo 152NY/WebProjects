@@ -1,0 +1,928 @@
+* {
+    /* font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif; */
+    /* font-family: 'Source Serif Pro', serif; */
+    font-family: montserrat, sans-serif;
+    font-weight: 400;
+    font-style: normal;
+    box-sizing: border-box;
+}
+
+html,
+body {
+    background: #fefefe;
+    margin: 0;
+}
+
+
+h1 {
+    color: #3f3f3fef;
+    margin-left: 2.5%;
+    margin-right: 5%;
+    font-weight: 500;
+}
+
+h2 {
+    color: #4e4e4eef;
+    margin-top: 5%;
+    margin-left: 5%;
+    margin-right: 5%;
+    margin-bottom: 0;
+    font-weight: 500;
+}
+
+h4 {
+    font-size: 16px;
+    margin-left: 2.5%;
+    margin-right: 2.5%;
+    color: #4e4e4eef;
+}
+
+a {
+    text-decoration: none;
+    color: #FFFFFF;
+    font-size: 16px;
+}
+hr {
+    width: 90%;
+    margin-left: 5%;
+    margin-top: 0;
+}
+
+
+
+
+
+
+.container {
+    background: #fefefe;
+    position: relative;
+    margin: 0;
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+}
+
+.foreground {
+    width: 100%;
+    background: #fefefe;
+}
+
+
+
+
+.tab_menu:target {
+    visibility: visible;
+    opacity: 1;
+}
+
+
+
+
+.item {
+    width: 95%;
+    margin: 2.5%;
+    margin-right: 2.5%;
+    font-size: 12px;
+    text-align: left;
+    background-color: #f5f5f5;
+    /* border-radius: 11px; */
+    transition: box-shadow 0.3s ease-in-out;
+    /* box-shadow: 10px 6px 4px rgba(138, 135, 135, 0.281); */
+    /* perspective: 1000px; Remove this if you don't want the 3D effect */
+}
+
+/* .item:hover {
+    box-shadow: 6px 4px 1px rgba(0, 0, 0, 0.3);
+} */
+
+.item img {
+    display: table-cell;
+    vertical-align: middle;
+    /* border-radius: 11px; */
+    width: 100%;
+}
+
+
+.row {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    width: 100%;
+}
+.column {
+    display: flex;
+    flex-direction: column;
+    flex-basis: 100%;
+    flex: 1;
+}
+  
+
+.item p {
+    color: #333333a6;
+    margin-left: 5%;
+    margin-right: 5%;
+}
+
+
+.item h6 {
+    font-size: 12px;
+    color: #333333a6;
+    text-align: left;
+    margin-left: 16px;
+    
+}
+
+.item button {
+    width: 30%;
+    background: rgba(141, 198, 215, 0.541);
+    border: 0;
+    /* border-radius: 11px; */
+    color: #184155;
+    cursor: pointer;
+    display: inline-block;
+    font-size: 12px;
+    line-height: 2.5;
+    outline: transparent;
+    text-align: center;
+    text-decoration: none;
+    transition: box-shadow .2s ease-in-out;
+    user-select: none;
+    -webkit-user-select: none;
+    touch-action: manipulation;
+    white-space: nowrap;
+    margin-top: 3%;
+    margin-bottom: 1%;
+    margin-right: 35%;
+    margin-left: 35%;
+}
+
+.item button a {
+    color: #184155;
+    display: block;
+    padding-top: 1px;
+    padding-bottom: 1px;
+    padding-right: 16px;
+    padding-left: 16px;
+}
+
+/* .nxt_stp_btn {
+    padding-top: 16px;
+    padding-bottom: 16px;
+    background-color: #184155df;
+    width: 99%;
+    border-radius: 5px;
+    font-weight: 500;
+    font-size: 16px;
+    color: #DBC09A;;
+} */
+
+
+.item button:not([disabled]):focus {
+    box-shadow: #184155;
+}
+
+.item button:not([disabled]):hover{
+    /* box-shadow: 0 .1rem .25rem #184155, -.125rem -.125rem 1rem #bac2d3; */
+    box-shadow: 6px 4px 1px #184155c6;
+}
+
+.cl-btn-7 {
+    width: 40px;
+    height: 40px;
+    border-radius: 40px;
+    position: absolute;
+    top: 0;
+    right: 1%;
+    z-index: 1;
+    margin: 20px auto;
+    cursor: pointer;
+}
+
+.cl-btn-7:before {
+    content: '+';
+    /* 9AD0EC */
+    color: rgba(141, 198, 215, 0.824);
+    position: absolute;
+    z-index: 2;
+    transform: rotate(45deg);
+    font-size: 50px;
+    line-height: 1;
+    top: -5px;
+    left: 7px;
+    transition: all 0.3s cubic-bezier(0.77, 0, 0.2, 0.85);
+}
+
+.cl-btn-7:after {
+    color: #184155;
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    border-radius: 100%;
+    background: rgba(141, 198, 215, 0.541);
+    z-index: 1;
+    transition: all 0.3s cubic-bezier(0.77, 0, 0.2, 0.85);
+    transform: scale(0.02);
+}
+
+.cl-btn-7:hover:after {
+    transform: scale(1);
+}
+
+.cl-btn-7:hover:before {
+    transform: scale(0.8) rotate(45deg);
+    color: #184155;
+}
+
+/* create_form styles */
+.create_form {
+    width: 99%;
+    margin-left: .5%;
+    margin-right: .5%;
+    text-align: left;
+}
+.create_form form{
+    width: 90%;
+    margin-left: 5%;
+    margin-right: 5%;
+    text-align: left;
+}
+.create_form input {
+    margin-bottom: 11px;
+    width: 100%;
+    padding: 2%;
+}
+.create_form label {
+   color: #707070ef;
+}
+
+/* License styles */
+.license {
+    background: #000000d7;
+    text-align: center;
+}
+.license p {
+    color: #ffffffaf;
+    font-weight: 600;
+    font-size: 16px;
+}
+
+
+.gallery {
+    background: #e1e8ecfb;
+    margin-bottom: 5%;
+  }
+  
+  .gallery-cell {
+    box-shadow: 10px 6px 4px rgba(138, 135, 135, 0.281);
+    background-color: #eee;
+    /* border-radius: 11px; */
+    width: 66%;
+    height: auto;
+    margin: 10px;
+    counter-increment: gallery-cell;
+  }
+  .gallery-cell p{
+    margin: 2%;
+    color: #707070ef;
+  }
+  /* cell number */
+  .gallery-cell:before {
+    display: block;
+    text-align: center;
+    content: counter(gallery-cell);
+    line-height: 200px;
+    font-size: 80px;
+    color: white;
+}
+
+
+
+/* Slideshow container */
+.slideshow-container {
+    margin-top: 2.5%;
+    max-width: 1000px;
+    position: relative;
+    margin: auto;
+}
+
+/* Hide the images by default */
+.mySlides {
+    display: none;
+}
+
+/* Next & previous buttons */
+.prev, .next {
+    cursor: pointer;
+    position: absolute;
+    top: 50%;
+    width: auto;
+    margin-top: -22px;
+    padding: 16px;
+    color: white;
+    font-weight: bold;
+    font-size: 18px;
+    transition: 0.6s ease;
+    border-radius: 0 3px 3px 0;
+    user-select: none;
+    background-color: rgba(0, 0, 0, 0.5);
+}
+
+/* Position the "next button" to the right */
+.next {
+  right: 0;
+  border-radius: 3px 0 0 3px;
+}
+
+/* On hover, add a black background color with a little bit see-through */
+.prev:hover, .next:hover {
+  background-color: rgba(0,0,0,0.8);
+}
+
+/* Caption text */
+.text {
+  color: #f2f2f2;
+  font-size: 15px;
+  padding: 8px 12px;
+  position: absolute;
+  bottom: 8px;
+  width: 100%;
+  text-align: center;
+}
+
+/* Number text (1/3 etc) */
+.numbertext {
+  color: #f2f2f2;
+  font-size: 12px;
+  padding: 8px 12px;
+  position: absolute;
+  top: 0;
+}
+
+/* The dots/bullets/indicators */
+.dot {
+  cursor: pointer;
+  height: 15px;
+  width: 15px;
+  margin: 0 2px;
+  background-color: #bbb;
+  border-radius: 50%;
+  display: inline-block;
+  transition: background-color 0.6s ease;
+}
+
+.active, .dot:hover {
+  background-color: #717171;
+}
+
+/* Fading animation */
+.fade {
+  animation-name: fade;
+  animation-duration: 1.5s;
+}
+
+@keyframes fade {
+  from {opacity: .4} 
+  to {opacity: 1}
+}
+
+
+
+/* Landing video */
+.logoSalus {
+    text-align: center;
+    width: 30%;
+}
+.logoSalus img{
+    text-align: center;
+    max-width: 50%;
+}
+
+.outter {
+    border-bottom: #626262 solid 3px;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+  }
+  
+.video-container {
+    height: 800px;
+    width: 100%;
+    position: relative;
+    overflow: hidden;
+  }
+  
+.video {
+    -o-object-fit: cover;
+       object-fit: cover;
+    position: absolute;
+    height: 100%;
+    width: 100%;
+    top: 0;
+    left: 0;
+}
+  
+.video-container:after {
+    content: "";
+    display: block;
+    height: 100%;
+    /* width: 100%; */
+    position: absolute;
+    top: 0;
+    left: 0;
+    background: rgba(0, 0, 0, 0.2);
+    z-index: 1;
+}
+  
+  
+.desc {
+    color: #ffffff;
+    font-weight: 500;
+    font-size: 30px;
+}
+  
+.callout {
+    background-color: #000000b3;
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    height: 100%;
+    text-align: center;
+    position: relative;
+    z-index: 10;
+    width: 100%;
+    margin: auto;
+}
+.headerMobile {
+    display: none;
+}
+.headerDesktop {
+    height: 480px;
+
+}
+
+
+.optionsTableHeader {
+    margin-top: 7%;
+    margin-bottom: 7%;
+    width: 100%;
+    text-align: center;
+}
+.optionsTableCards {
+    margin-left: 1%;
+    width: 99%;
+}
+.optionsTableCards img{
+    /* border-top-left-radius: 11px;
+    border-top-right-radius: 11px; */
+    width: 100%;
+}
+
+.optionsItem {
+    width: 32%;
+    margin: .5%;
+    margin-right: .5%;
+    text-align: left;
+    background-color: #f5f5f5;
+    /* border-radius: 11px; */
+    transition: box-shadow 0.3s ease-in-out;
+    /* box-shadow: 10px 6px 4px rgba(138, 135, 135, 0.281); */
+    /* perspective: 1000px; Remove this if you don't want the 3D effect */
+}
+.optionsItem h2 {
+    margin-left: 2.5%;
+    margin-top: 2%;
+    margin-bottom: 2%;
+    font-weight: 500;
+}
+.optionsItem p {
+    width: 95%;
+    margin-left: 2.5%;
+    padding-bottom: 2.5%;
+    color: #585858;
+}
+
+.flippingCards {
+    margin-top: -3%;
+    width: 99%;
+    margin-left: .5%;
+    margin-right: .5%;
+}
+
+
+.flip-card-3D-wrapper {
+    /* border-radius: 11px; */
+    width: 48%;
+    height: auto;
+    /* position: relative; */
+    -o-perspective: 900px;
+    -webkit-perspective: 900px;
+    -ms-perspective: 900px;
+    perspective: 900px;
+    margin: 1%;
+  }
+  .flip-card {
+    /* border-radius: 11px; */
+    width: 100%;
+    height: 400px;
+    margin: 50px auto;
+    /* position: absolute; */
+    -o-transition: all 1s ease-in-out;
+    -webkit-transition: all 1s ease-in-out;
+    -ms-transition: all 1s ease-in-out;
+    transition: all 1s ease-in-out;
+    -o-transform-style: preserve-3d;
+    -webkit-transform-style: preserve-3d;
+    -ms-transform-style: preserve-3d;
+    transform-style: preserve-3d;
+  }
+  .do-flip {
+    -o-transform: rotateY(-180deg);
+    -webkit-transform: rotateY(-180deg);
+    -ms-transform: rotateY(-180deg);
+    transform: rotateY(-180deg);
+  }
+
+  .flip-card h2 {
+    position: absolute;
+    top: 8px;
+    left: 8px;
+    /* width: 40px;
+    height: 40px; */
+    cursor: pointer;
+    font-weight: 600;
+    font-size: 40px;
+    color: #eee;
+    /* color: #3b8626; */
+    /* color: #17475f; */
+    padding: 0;
+  }
+
+
+  .flip-card-btn-turn-to-back, .flip-card-btn-turn-to-front {
+    /* border-radius: 11px; */
+    position: absolute;
+    bottom: 8px;
+    right: 8px;
+    width: 40px;
+    height: 40px;
+    cursor: pointer;
+    font-weight: 600;
+    font-size: .7em;
+    padding: 0;
+  }
+
+  .flip-card-btn-turn-to-back {
+    color: #ffffffe6;
+    background: transparent;
+    border: transparent solid 1px;
+  }
+
+  .flip-card-btn-turn-to-front {
+    color: #ffffffe6;
+    background: transparent;
+    border: transparent solid 1px;
+  }
+  
+  .flip-card .flip-card-front, .flip-card .flip-card-back{
+    /* border-radius: 11px; */
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    -o-backface-visibility: hidden;
+    -webkit-backface-visibility: hidden;
+    -ms-backface-visibility: hidden;
+    backface-visibility: hidden;
+    z-index: 2;
+    /* -webkit-box-shadow: 5px 6px 32px 2px rgba(133,133,133,0.71);
+    -moz-box-shadow: 5px 6px 32px 2px rgba(133,133,133,0.71);
+    box-shadow: 5px 6px 32px 2px rgba(133,133,133,0.71); */
+  }
+  .flip-card .flip-card-front {
+    /* border-radius: 11px; */
+    background: #f5f5f5;
+  }
+
+
+  .flip-card .flip-card-back {
+    /* border-radius: 11px; */
+    background: #272727;
+    -o-transform: rotateY(180deg);
+    -webkit-transform: rotateY(180deg);
+    -ms-transform: rotateY(180deg);
+    transform: rotateY(180deg);
+  }
+  .flip-card .flip-card-front p, .flip-card .flip-card-back p {
+    color: rgba(255, 255, 255, 0.854);
+    display: block;
+    position: absolute;
+    width: 95%;
+    margin-left: 2.5%;
+    /* height: 400px; */
+  }
+ 
+  .flip-card img {
+    /* border-radius: 11px; */
+    width: 100%;
+    height: 100%;
+  }
+  
+.filter {
+    border: #0000003b solid 2px;
+    width: 95%;
+    margin: 2.5%;
+    padding: 2.5%;
+    background-color: #f5f5f5;
+}
+.filter a {
+    font-size: 16px;
+    color: #000000ad;
+
+}
+.langMenu, .langMenu hr {
+    width: 100%;
+}
+.langMenu hr {
+    margin-left: 0;
+    width: 100%;
+}
+.langMenu table {
+    margin-left: 1%;
+}
+
+#item1{
+    text-align: center;
+}
+#item4{
+    font-weight: bold;
+    font-size: 18px;
+    text-align: center;
+}
+
+.bottomBar{
+    background: #000000d7;
+}
+.bottomBarPrimaryTable{
+    margin-left: .5%;
+    margin-right: .5%;
+    width: 99%;
+}
+.bottomBar a, .bottomBar svg, .bottomBar p{
+    font-size: 14px;
+    color: #fefefe;
+    margin-top: 0;
+    margin-bottom: 0;
+
+}
+.firstRow{
+    text-align: center;
+}
+.bottomContactCard{
+    text-align: left;
+    width: 100%;
+    padding-top: 3%;
+    padding-bottom: 3%;
+}
+
+#finalWrapper{
+    text-align: center;
+    width: 100%;
+    padding-top: 3%;
+    padding-bottom: 70px;
+}
+.legalInfo{
+    width: 99%;
+    margin-left: .5%;
+}
+.legalInfo h2{
+    margin-left: 2.5%;
+}
+.legalInfo a{
+    color: #184155;
+}
+
+.legalInfo p, .legalInfo li, .legalInfo h3 {
+    margin-left: 3%;
+}
+
+.bottomBarMobile{
+    display: none;
+}
+
+#lv{
+    animation: wipe-enter .7s ease-in-out;
+}
+@keyframes wipe-enter {
+    0% {
+      transform: scale(0, 0);
+    }
+    100% {
+      transform: scale(1, 1);
+    }
+  }
+  
+
+@media (max-width: 700px) {
+    .bottomBarPrimaryTable{
+        display: none;
+    }
+    .bottomBarMobile{
+        display: block;
+        width: 100%;
+        text-align: center;
+    }
+    .bottomBarListMobileText{
+        margin: 2%;
+        display: inline;
+    }
+    .bottomBarListMobileText a{
+        margin: 5px;
+    }
+    .flip-card-3D-wrapper {
+        /* border-radius: 11px; */
+        width: 98%;
+        height: auto;
+        /* position: relative; */
+        -o-perspective: 900px;
+        -webkit-perspective: 900px;
+        -ms-perspective: 900px;
+        perspective: 900px;
+        margin: 1%;
+      }
+
+    .flip-card {
+        /* border-radius: 11px; */
+        height: 350px;
+    }
+    .optionsItem {
+        width: 95%;
+        margin: 2.5%;
+        font-size: 12px;
+        text-align: left;
+        background-color: #f5f5f5;
+        /* border-radius: 11px; */
+        transition: box-shadow 0.3s ease-in-out;
+        
+        /* box-shadow: 10px 6px 4px rgba(138, 135, 135, 0.281); */
+        /* perspective: 1000px; Remove this if you don't want the 3D effect */
+    }
+
+    .optionsTableHeader{
+        margin-top: 20%;
+        margin-bottom: 20%;
+    }
+
+    .optionsTableHeader h1{
+        font-size: 24px;
+    }
+
+    .headerDesktop {
+        display: none;
+    
+    }
+    .headerMobile {
+        display: block;
+        margin-top: 55px;
+        margin-left: 1%;
+    }
+    .headerMobile h1{
+        font-weight:bolder;
+    }
+
+    .logoSalus {
+        margin-top: -25%;
+        text-align: center;
+        width: 70%;
+    }
+    .logoSalus img{
+        text-align: center;
+        width: 50%;
+    }
+    .outter {
+        height: 700px;
+        display: flex;
+        flex-direction: column;
+        justify-content: right;
+      }
+      
+      .video-container {
+        width: auto;
+        height: 700px;
+        position: relative;
+        overflow: hidden;
+      }
+      
+      video {
+        -o-object-fit: cover;
+           object-fit: cover;
+        position: absolute;
+        width: auto;
+        height: 700px;
+        top: 0;
+        left: 0;
+      }
+      
+    
+      .video-container:after {
+        content: "";
+        display: block;
+        width: auto;
+        height: 700px;
+        position: absolute;
+        top: 0;
+        left: 0;
+        background: rgba(0, 0, 0, 0.2);
+        z-index: 1;
+      }
+    
+    .desc {
+        margin-left: 2.5%;
+        margin-right: 2.5%;
+        color: #ffffff;
+        font-weight: 500;
+        font-size: 18px;
+    }
+   
+      
+    
+    .row {
+        display: block;
+        width: 100%;
+    }
+      
+    .column {
+        display: block;
+        flex: 1;
+    }
+    .item button {
+        width: 90%;
+        background: rgba(141, 198, 215, 0.541);
+        border: 0;
+        /* border-radius: 11px; */
+        color: #184155;
+        cursor: pointer;
+        display: inline-block;
+        font-size: 12px;
+        font-weight: 500;
+        line-height: 2.5;
+        outline: transparent;
+        text-align: center;
+        text-decoration: none;
+        transition: box-shadow .2s ease-in-out;
+        user-select: none;
+        -webkit-user-select: none;
+        touch-action: manipulation;
+        /* white-space: nowrap; */
+        margin-bottom: 5%;
+        margin-right: 5%;
+        margin-left: 5%;
+    }
+
+    .item button a {
+        color: #184155;
+        display: block;
+        padding-top: 1px;
+        padding-bottom: 1px;
+        padding-right: 16px;
+        padding-left: 16px;
+    }
+
+    .nxt_stp_btn {
+        padding-top: 16px;
+        padding-bottom: 16px;
+        background-color: #184155df;
+        width: 99%;
+        /* border-radius: 11px; */
+        font-weight: 500;
+        font-size: 16px;
+        color: #DBC09A;;
+    }
+
+
+    .item button:not([disabled]):focus {
+        box-shadow: #184155;
+    }
+
+    .item button:not([disabled]):hover{
+        box-shadow: 6px 4px 1px #184155c6;
+    }
+
+     .cl-btn-7 {
+        width: 40px;
+        height: 40px;
+        border-radius: 40px;
+        position: absolute;
+        top: 0;
+        right: 1%;
+        z-index: 1;
+        margin: 20px auto;
+        cursor: pointer;
+    }
+
+}

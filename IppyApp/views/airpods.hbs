@@ -1,0 +1,63 @@
+<div class="container">
+    <h1>AirPods</h1>
+    <div id="carousel">
+        <a>
+        <div class="item">
+            <h6>AirPods (3rd gen.)</h6>
+                <div class = "image">
+                    <img src="./images/AirPods/3.png">
+                </div>
+                <h6>17990₽</h6>
+                <button onclick="addFunc00001()"><a class="button"> В корзину </a></button>
+                <script>
+                        function addFunc00001() {
+                        const device00001 = new Device ("AirPods (3rd gen.)", 17990)
+                        arr.push(device00001);
+                        localStorage.setItem("my_models", JSON.stringify(arr));
+                        alert("Товар добавлен в корзину")
+                        }
+                </script>
+                
+        </div>
+        </a>
+
+        <a>
+        <div class="item">
+            <h6>AirPods Pro</h6>
+                <div class = "image">
+                    <img src="./images/AirPods/pro.png">
+                </div>
+                <h6>21990₽</h6>
+                <button ><a class="button" onclick="addFunc00002()"> В корзину </a></button>
+                <script>
+                        function addFunc00002() {
+                        const device00002 = new Device ("AirPods Pro", 21990);
+                        arr.push(device00002);
+                        localStorage.setItem("my_models", JSON.stringify(arr));
+                        alert("Товар добавлен в корзину")
+                        }
+                </script>
+
+        </div>
+        </a>
+
+        <a>
+        <div class="item">
+            <h6>AirPods (2nd gen.)</h6>
+                <div class = "image">
+                    <img src="./images/AirPods/2.png">
+                </div>
+                <h6>12990₽</h6>
+                <button onclick="addFunc00003()"><a class="button"> В корзину </a></button>
+                <script>
+                        function addFunc00003() {
+                        const device00003 = new Device ("AirPods (2nd gen.)", 12990)
+                        arr.push(device00003);
+                        localStorage.setItem("my_models", JSON.stringify(arr));
+                        alert("Товар добавлен в корзину")
+                        }
+                </script>
+        </div>
+        </a>
+    </div>
+</div>

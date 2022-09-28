@@ -1,0 +1,22 @@
+
+{{> head}} 
+{{> navbar}}
+
+<script>
+  var arr = JSON.parse(localStorage.getItem("my_models")) || [];
+
+
+
+  //"Device" construcror
+  function Device(model, price, color) {
+    this.model = model;
+    this.price = price;
+    this.color = color
+  }
+  
+</script>
+
+  {{{body}}}
+
+
+</html>

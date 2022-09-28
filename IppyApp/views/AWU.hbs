@@ -1,0 +1,101 @@
+<body>
+    <script>
+        
+        var color = "Titan";
+        window.onload = function () {
+            e_AWU();
+        }
+
+        function e_AWU(){
+
+            const memories = ['49 mm'];
+            const prices = [55990];
+
+            let inputId = " ";
+            let labelId = " ";
+            
+            for (let j = 0; j < memories.length; j++)
+            {
+                inputId = 'Apple Watch Ultra ' + memories[j];
+                document.getElementById(inputId).value = prices[j];
+            }
+            for (let j = 0; j < memories.length; j++)
+            {
+                labelId = ('AWU ' + memories[j]);
+                document.getElementById(labelId).innerHTML += (prices[j] + "₽");
+            }
+        }
+
+        function addFuncAWU() {
+            const deviceAWU = new Device (
+                document.querySelector('input[name="AW_U"]:checked ').id,
+                document.querySelector('input[name="AW_U"]:checked').value,
+                color
+            );
+            arr.push(deviceAWU);
+                    
+            localStorage.setItem("my_models", JSON.stringify(arr));
+            alert("Товар добавлен в корзину");
+        }
+
+        function changeColor(x) {
+            if(x == "Titan") 
+            {
+                color = "Titan"
+                document.getElementById('AWU_photo').src = "./images/AW/AWU.jpg";
+                return color;
+            }
+            
+            else 
+            {
+                color = "Titan"
+                document.getElementById('AWU_photo').src = "./images/AW/AWU.jpg";
+                return color;
+            }
+        }
+    </script>
+
+    <div class="container">
+        <div class = "foreground">    
+            <h1 id="catalog"> Ultra </h1>
+
+            <div class="item_wide_mac" >
+                <div class="row">
+                    <div class="column">
+                        <img id="AWU_photo" src="./images/AW/AWU.jpg" >
+                    </div>
+                    <div class="column">
+                        <div class="title">
+                            <h2>Цвет</h2>
+                        </div>
+                        <ul name="color" class="colorPicker">
+                            <li>
+                                <input type="radio" name="AWU" id="Titan" value="Titan" onclick="changeColor('Titan')" checked>
+                                <label for="Titan">
+                                    <img src="./images/colors/finish-starlight-202209.jpeg">
+                                    <span>Titan</span>
+                                </label>
+                            </li>
+                            <br>
+                        </ul>
+                        
+
+                        <form action=" " class="memory">
+                            <div class="title">
+                                <h2>Размер</h2>
+                            </div>
+                            <div class="form_radio_btn">
+                                <input id = "Apple Watch Ultra 49 mm" type="radio" name="AW_U"  checked>
+                                <label id = "AWU 49 mm" for="Apple Watch Ultra 49 mm"> 49mm  </label>
+                            </div>
+                        </form>
+                        <br><br><br>
+                        <div class="addButton">
+                            <button onclick="addFuncAWU()">Добавить в корзину</button>   
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>

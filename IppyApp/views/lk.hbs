@@ -1,0 +1,64 @@
+{{!-- 
+<div class="overlay" id="lk">
+    <div class="screen-1">
+    <div class="email">
+        <label for="email">Email</label>
+        <div class="sec-2">
+        <ion-icon name="mail-outline"></ion-icon>
+        <input type="email" name="email" placeholder="Username@gmail.com"/>
+        </div>
+    </div>
+    <div class="password">
+        <label for="password">Пароль</label>
+        <div class="sec-2">
+        <ion-icon name="lock-closed-outline"></ion-icon>
+        <input class="pas" type="password" name="password" placeholder="············"/>
+        <ion-icon class="show-hide" name="eye-outline"></ion-icon>
+        </div>
+    </div>
+    <button class="login">Войти </button>
+    <div class="footer"><span>Зарегистрироваться</span></div>
+    </div>
+</div> --}}
+
+<div class="container">
+  {{!-- Регистрация
+  <form class="go-bottom" action="/registration" method="post">
+            <br>
+            <h2>Заполните данные</h2>
+            <div>
+              <input id="username" name="username" type="text" required>
+              <label for="username"> username </label>
+            </div>
+            <div>
+              <input id="password" name="password" type="text" required>
+              <label for="password"> password </label>
+            </div>
+            <br>
+            <input type="submit" value="Отправить">
+  </form> --}}
+  
+
+
+  <div class="loginPage">
+    <form class="go-bottom" id="#auth" action="/login" method="post">
+      <br>
+      <h2>Заполните данные, чтобы войти</h2>
+      <div>
+          <input id="username" name="username" type="text" required>
+          <label for="username"> Логин </label>
+      </div>
+      <div>
+        <input id="password" name="password" type="text" required>
+        <label for="password"> Пароль </label>
+      </div>
+      <br>
+      <input class="nxt_stp_btn" type="submit" value="Войти">
+
+      <br><br><br>
+      <p>Не заргестрированы? <a href="/lkReg">Создайте аккаунт</a> прямо сейчас</p>
+      
+    </form>
+
+  </div>
+</div>

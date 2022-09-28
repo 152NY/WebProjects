@@ -1,0 +1,160 @@
+<body>
+    <script>
+        var color = "Deep Purple";
+        window.onload = function () {
+            e_14Pro();
+        }
+
+        function e_14Pro(){
+
+            const memories = ['128 GB', '256 GB', '512 GB', '1 TB'];
+            const prices = [97990, 109990, 121990, 141990];
+
+            let inputId = " ";
+            let labelId = " ";
+            
+            for (let j = 0; j < memories.length; j++)
+            {
+                inputId = 'iPhone 14 Pro ' + memories[j];
+                console.log(inputId)
+                document.getElementById(inputId).value = prices[j];
+            }
+            for (let j = 0; j < memories.length; j++)
+            {
+                labelId = ('14 Pro ' + memories[j]);
+                console.log(labelId)
+                document.getElementById(labelId).innerHTML += (prices[j] + "₽");
+            }
+        }
+
+        function addFunc14Pro() {
+            const device14pro = new Device (
+                document.querySelector('input[name="14_3"]:checked ').id,
+                document.querySelector('input[name="14_3"]:checked').value,
+                color
+            );
+            arr.push(device14pro);
+                    
+            localStorage.setItem("my_models", JSON.stringify(arr));
+            alert("Товар добавлен в корзину");
+        }
+
+        function changeColor(x) {
+            if (x == "Deep Purple") 
+            {
+                color = "Deep Purple";
+                document.getElementById('14_pro_photo').src = "./images/iPhones/14Pro/14ProVL.jpg";
+                return color;
+            } 
+            else if(x == "Space Black") 
+            {
+                color = "Space Black"
+                document.getElementById('14_pro_photo').src = "./images/iPhones/14Pro/14ProBL.jpg";
+                return color;
+            }
+            else if(x == "Gold") 
+            {
+                color = "Gold"
+                document.getElementById('14_pro_photo').src = "./images/iPhones/14Pro/14ProGL.jpg";
+                return color;
+            }
+            else if(x == "Silver") 
+            {
+                color = "Silver"
+                document.getElementById('14_pro_photo').src = "./images/iPhones/14Pro/14ProSL.jpg";
+                return color;
+            }
+            
+            else 
+            {
+                color = "Space Black"
+                document.getElementById('14_pro_photo').src = "./images/iPhones/14Pro/14ProBL.jpg";
+                return color;
+            }
+        }
+    </script>
+
+    <div class="container">
+        <div class = "foreground">    
+            <h1 id="catalog"> iPhone 14 Pro</h1>
+
+            <div class="item_wide" >
+                <div class="row">
+                    <div class="column">
+                        <img id="14_pro_photo" src="./images/iPhones/14Pro/14ProBL.jpg" >
+                    </div>
+                    <div class="column">
+                        <div class="title">
+                            <h2>Цвет</h2>
+                        </div>
+                        <ul name="color" class="colorPicker">
+                            <li>
+                                <input type="radio" name="14Pro" id="Deep Purple" value="Deep Purple" onclick="changeColor('Deep Purple')" >
+                                <label for="Deep Purple">
+                                    <img src="./images/colors/iphone-pro-finish-deeppurple-2022.jpeg">
+                                    <span>Deep Purple</span>
+                                </label>
+                            </li>
+                            <br>
+                            <li>
+                                <input type="radio" name="14Pro" id="Space Black" value="Space Black" onclick="changeColor('Space Black')" checked>
+                                <label for="Space Black">
+                                    <img src="./images/colors/iphone-pro-finish-spaceblack-2022.jpeg">
+                                    <span>Space Black</span>
+                                </label>
+                            </li>
+                            <br>
+                            <li>
+                                <input type="radio" name="14Pro" id="Gold" value="Gold" onclick="changeColor('Gold')">
+                                <label for="Gold">
+                                    <img src="./images/colors/iphone-pro-finish-gold-2022.jpeg">
+                                    <span>Gold</span>
+                                </label>
+                            </li>
+                            <br>
+                            <li>
+                                <input type="radio" name="14Pro" id="Silver" value="Silver" onclick="changeColor('Silver')">
+                                <label for="Silver">
+                                    <img src="../images/colors/iphone-pro-finish-silver-2022.jpeg">
+                                    <span>Silver</span>
+                                </label>
+                            </li>
+                            <br>
+                            
+                        </ul>
+                        
+
+                        <form action=" " class="memory">
+                            <div class="title">
+                                <h2>Память</h2>
+                            </div>
+                            <div class="form_radio_btn">
+                                <input id = "iPhone 14 Pro 128 GB" type="radio" name="14_3"  checked>
+                                <label id = "14 Pro 128 GB" for="iPhone 14 Pro 128 GB"> 128 GB  </label>
+                            </div>
+                                    
+                            <div class="form_radio_btn">
+                                <input id = "iPhone 14 Pro 256 GB" type="radio" name="14_3">
+                                <label id = "14 Pro 256 GB"; for="iPhone 14 Pro 256 GB">256 GB  </label>
+                            </div>
+                                    
+                            <div class="form_radio_btn">
+                                <input id = "iPhone 14 Pro 512 GB" type="radio" name="14_3" >
+                                <label id = "14 Pro 512 GB"  for="iPhone 14 Pro 512 GB">512 GB  </label>
+                            </div>
+
+                             <div class="form_radio_btn">
+                                <input id = "iPhone 14 Pro 1 TB" type="radio" name="14_3" >
+                                <label id = "14 Pro 1 TB"  for="iPhone 14 Pro 1 TB">1 TB  </label>
+                            </div>
+                        </form>
+                        <br><br><br>
+                        <div class="addButton">
+                            <button onclick="addFunc14Pro()">Добавить в корзину</button>   
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>

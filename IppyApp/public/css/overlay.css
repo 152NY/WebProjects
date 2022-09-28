@@ -1,0 +1,270 @@
+.overlay {
+    position: fixed;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background: rgba(0, 0, 0, 0.699);
+    transition: opacity 1s;
+    opacity: 0; 
+    visibility: hidden;
+    z-index: 2;
+    animation: move2 .1s ease-in-out;
+  }
+  @keyframes move2 {
+    from {bottom: -50%;}
+    to {bottom: 0%;}
+  }
+
+
+  .overlay:target {
+    visibility: visible;
+    opacity: 1;
+  }
+  
+  .popup {
+    z-index: 2;
+    border: #1841554f solid 2px;
+    margin: 70px auto;
+    padding: 20px;
+    background: rgba(255, 255, 255, 0.89);
+    border-radius: 15px;
+    width: 60%;
+    position: relative;
+    transition: move2 1s ease-in-out;
+    align-items: center;
+  }
+  
+ .content {
+    max-height: 60%;
+    overflow: auto;
+  }
+  
+  /* @media screen and (max-width: 700px){
+    .box{
+      width: 80%;
+    }
+    .popup{
+      width: 80%;
+    }
+  } */
+
+
+  
+form {
+    width: 98%;
+    float: center;
+    text-align: center;
+    margin-left: 1%;
+    margin-right: 1%;
+    /* margin: 20px; */
+}
+
+form p {
+  color: #2c2b2bee;
+  margin-bottom: 2px;
+  margin-top: 8px;
+}
+  
+form > div {
+    position: relative;
+    text-align: center;
+    /* overflow: hidden; */
+}
+  
+form input, form textarea {
+    margin-bottom: 10px;
+    border-radius: 16px;
+    width: 100%;
+    border: 2px solid gray;
+    background: none;
+    position: relative;
+    top: 0;
+    left: 0;
+    z-index: 1;
+    padding: 8px 12px;
+    outline: 0;
+}
+
+  /* form input:valid, form textarea:valid {
+    background: white;
+  } */
+  
+form input:focus, form textarea:focus {
+  border-radius: 16px;
+    border-color: #808AA0;
+}
+  
+form input:focus + label, form textarea:focus + label {
+  border-radius: 16px;
+    margin-top: 1px;
+    background: #184155;
+    color: rgb(255, 255, 255);
+    font-size: 70%;
+    padding: 1px 6px;
+    z-index: 2;
+    text-transform: uppercase;
+    font-size: 12px;
+    transition: 0.5s;
+}
+  
+form label {
+  border-radius: 16px;
+    margin-top: 1%;
+    /* transition: background 0.2s, color 0.2s, top 0.2s, bottom 0.2s, right 0.2s, left 0.2s; */
+    position:absolute;
+    color: rgba(153, 153, 153, 0.699);
+    padding: 7px 6px;
+    font-size: 12px;
+}
+  
+form textarea {
+    display: block;
+    resize: vertical;
+}
+  
+  
+.go-bottom input, .go-bottom textarea {
+    padding: 12px 12px 12px 12px;
+}
+  
+.go-bottom label {
+    top: 0;
+    bottom: 0;
+    left: 25%;
+    width: 50%;
+}
+  
+.go-bottom input:focus, .go-bottom textarea:focus {
+    margin: 1px;
+    padding: 4px 6px 20px 6px;
+    
+}
+  
+.go-bottom input:focus + label, .go-bottom textarea:focus + label {
+    top: 100%;
+    margin-top: -16px;
+    
+}
+  
+.er {
+    margin-left: 5%;
+    margin-right: 5%;
+}
+  
+  
+.close {
+    width: 30%;
+}
+  
+.input_form p{
+    font-size: 22px;
+    color: #909090;
+}
+  
+.main-block_buttons button {
+    border: #FFFFFF;
+    background-color: #FFFFFF;
+}
+
+.cancel_form {
+    margin-left: 1%;
+    width: 30%;
+    border-radius: 16px;
+    font-family: -apple-system,system-ui,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;
+    font-size: 16px;
+}
+  
+#popup2 img {
+    width: 50%;
+    margin-left: 25%;
+    margin-right: 25%;
+}
+
+.transfer {
+    padding: 0 2% 0 2%;
+    z-index: 2;
+}
+
+#loginSuggestion {
+  font-size: 16px;
+}
+#loginSuggestion a{
+  color: #184155;
+}
+#loginSuggestion p{
+  color:rgba(0, 0, 0, 0.699);
+}
+
+.cashback {
+  height: 50px;
+  text-align: center;
+  width: 100%;
+}
+.cashback table {
+  width: 100%;
+}
+.cashback label, .cashback p{
+  font-size: 16px;
+  width: auto;
+}
+.cashback label {
+  padding-bottom: 25px;
+  top: -10px;
+  bottom: 0;
+  width: auto;
+}
+
+#cashback_label {
+  color: #184155;
+}
+#cashback_label:hover {
+  color: #18415591;
+}
+
+.cashback input {
+  display: none;
+  width: 0;
+  margin: 0;
+  padding: 0;
+}
+
+
+
+@media (max-width: 700px) {
+  .cashback label {
+    padding-bottom: 25px;
+    top: -10px;
+    bottom: 0;
+    width: auto;
+    left: 1%;
+  }
+  .overlay {
+    position: fixed;
+    top: 0;
+    bottom: 0%;
+    left: 0;
+    right: 0;
+    background: rgba(0, 0, 0, 0.7);
+    z-index: 2;
+    animation: move3 .1s ease-in-out;
+  }
+  .popup{
+    background-color: #E4E9EB;
+    border-radius: 16px;
+    position: fixed;
+    left: 0;
+    bottom: 0;
+    margin-top: 16px;
+    /* height: 100%; */
+    width: 99%;
+    margin-left: 0.5%;
+    margin-right: 0.5%;
+    animation: move2 1s linear;
+    z-index: 2;
+}
+@keyframes move2 {
+  from {bottom: -100%;}
+  to {bottom:0%;}
+}
+}

@@ -1,0 +1,132 @@
+<body>
+    <script>
+        
+        var color = "Starlight";
+        window.onload = function () {
+            e_AWSE();
+        }
+
+        function e_AWSE(){
+
+            const memories = ['40 mm', '44 mm'];
+            const prices = [25990, 28990];
+
+            let inputId = " ";
+            let labelId = " ";
+            
+            for (let j = 0; j < memories.length; j++)
+            {
+                inputId = 'Apple Watch SE ' + memories[j];
+                document.getElementById(inputId).value = prices[j];
+            }
+            for (let j = 0; j < memories.length; j++)
+            {
+                labelId = ('AWSE ' + memories[j]);
+                document.getElementById(labelId).innerHTML += (prices[j] + "₽");
+            }
+        }
+
+        function addFuncAWSE() {
+            const deviceAWSE = new Device (
+                document.querySelector('input[name="AW_SE"]:checked ').id,
+                document.querySelector('input[name="AW_SE"]:checked').value,
+                color
+            );
+            arr.push(deviceAWSE);
+                    
+            localStorage.setItem("my_models", JSON.stringify(arr));
+            alert("Товар добавлен в корзину");
+        }
+
+        function changeColor(x) {
+            if(x == "Midnight") 
+            {
+                color = "Midnight"
+                document.getElementById('AWSE_photo').src = "./images/AW/AWSE/AWSEMD.jpg";
+                return color;
+            }
+            else if(x == "Silver") 
+            {
+                color = "Silver"
+                document.getElementById('AWSE_photo').src = "./images/AW/AWSE/AWSEWH.jpg";
+                return color;
+            }
+            else if(x == "Starlight") 
+            {
+                color = "Starlight"
+                document.getElementById('AWSE_photo').src = "./images/AW/AWSE/AWSESL.jpg";
+                return color;
+            }
+            else 
+            {
+                color = "Starlight"
+                document.getElementById('AWSE_photo').src = "./images/AW/AWSE/AWSESL.jpg";
+                return color;
+            }
+        }
+    </script>
+
+    <div class="container">
+        <div class = "foreground">    
+            <h1 id="catalog"> SE</h1>
+
+            <div class="item_wide_mac" >
+                <div class="row">
+                    <div class="column">
+                        <img id="AWSE_photo" src="./images/AW/AWSE/AWSESL.jpg" >
+                    </div>
+                    <div class="column">
+                        <div class="title">
+                            <h2>Цвет</h2>
+                        </div>
+                        <ul name="color" class="colorPicker">
+                            <li>
+                                <input type="radio" name="AWSE" id="Starlight" value="Starlight" onclick="changeColor('Starlight')" checked>
+                                <label for="Starlight">
+                                    <img src="./images/colors/finish-starlight-202209.jpeg">
+                                    <span>Starlight</span>
+                                </label>
+                            </li>
+                            <br>
+                            <li>
+                                <input type="radio" name="AWSE" id="Midnight" value="Midnight" onclick="changeColor('Midnight')">
+                                <label for="Midnight">
+                                    <img src="./images/colors/finish-midnight-202209.jpeg">
+                                    <span>Midnight</span>
+                                </label>
+                            </li>
+                            <br>
+                            <li>
+                                <input type="radio" name="AWSE" id="Silver" value="Silver" onclick="changeColor('Silver')">
+                                <label for="Silver">
+                                    <img src="./images/colors/macbook-silver-select-201810_SW_COLOR.jpeg">
+                                    <span>Silver</span>
+                                </label>
+                            </li>
+                            <br>
+                        </ul>
+                        
+
+                        <form action=" " class="memory">
+                            <div class="title">
+                                <h2>Размер</h2>
+                            </div>
+                            <div class="form_radio_btn">
+                                <input id = "Apple Watch SE 40 mm" type="radio" name="AW_SE"  checked>
+                                <label id = "AWSE 40 mm" for="Apple Watch SE 40 mm"> 40mm  </label>
+                            </div>
+                            <div class="form_radio_btn">
+                                <input id = "Apple Watch SE 44 mm" type="radio" name="AW_SE" >
+                                <label id = "AWSE 44 mm" for="Apple Watch SE 44 mm"> 44mm  </label>
+                            </div>
+                        </form>
+                        <br><br><br>
+                        <div class="addButton">
+                            <button onclick="addFuncAWSE()">Добавить в корзину</button>   
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>

@@ -1,0 +1,163 @@
+<script>
+  var arr = JSON.parse(localStorage.getItem("my_models")) || [];
+  localStorage.setItem("my_models", JSON.stringify(arr));
+  
+
+  //arr = JSON.parse(localStorage.getItem("my_models")); //get them back
+
+  let data;
+  let sum;
+  if (data == null && sum == null) {
+    data = "";
+    sum = 0;
+  } else {
+    data = data;
+    sum = sum;
+  }
+
+
+
+  window.onload = function () {
+    //e_13STD();
+    //e_13P();
+    //e_13M();
+    //e_13PM();
+    //e_12STD();
+    //e_11STD();
+    popFunc();
+  }
+
+  //"Device" construcror
+  function Device(model, price, color) {
+    this.model = model;
+    this.price = price;
+    this.color = color
+  }
+  function checkUser () {
+      var a = JSON.parse(localStorage.getItem("connected_user")) || undefined;
+      //autofill user data if it is
+      if (a == undefined) {
+        document.getElementById('cashback_block').hidden = 'true';
+        console.log("User not found");
+      } 
+      else {
+        document.getElementById('loginSuggestion').style.visibility = 'hidden';
+        document.getElementById('name').value = a.name;
+        document.getElementById('email').value = a.email;
+        document.getElementById('tel').value = a.tel;
+        document.getElementById('cashback_p').innerHTML = a.sum + "₽";
+        document.getElementById('cashback').value = 0;
+      }
+  }
+  function useCashback() {
+    var a = JSON.parse(localStorage.getItem("connected_user"));
+    document.getElementById('cashback').value = a.sum;
+    document.getElementById('cashback_label').innerHTML = "Зачислено";
+  }
+
+  //Cart render function
+  function popFunc() {
+
+    if (arr.length === 0) {
+      document.getElementById('log').innerHTML = "<p> Пока здесь пусто... </p>";
+      document.getElementById('next').style.visibility = 'hidden';
+    }
+    else {
+      //Model and price output
+      document.getElementById('next').style.visibility = 'visible';
+      document.getElementById('log').innerHTML = "";
+      arr.forEach(element => {
+        document.getElementById('log').innerHTML += ('<p>' + element.model + ' ' + element.color + '<br>' + element.price + '₽</p>');
+        data += (element.model + " | ");
+      });
+
+      //Total price counter
+      document.getElementById('log').innerHTML += "<hr>";
+      arr.forEach(element => (sum += parseInt(element.price)));
+      document.getElementById('log').innerHTML += ('<p> Итого: ' + sum + '₽</p>');
+      document.getElementById('log').innerHTML += "<hr>";
+
+      //Insert data to hidden input and unblock button
+      console.log(data);
+      let input = document.getElementById('memory');
+      input.value = data;
+      let totalPrice = document.getElementById('totalPrice');
+      totalPrice.value = sum;
+      document.getElementById("nxt_stp_btn").hidden = false;
+      localStorage.setItem("my_models", JSON.stringify(arr));
+
+
+      //Convert variables to 0
+      data = "";
+      sum = 0;
+    }
+  }
+</script>
+
+<div class="container">
+  <div class="cart">
+    <h1>Корзина</h1>
+      <div id="log"></div>
+      <div class="next_button">
+         <button id="next"><a class="button" href="#popup01"> Далее </a> </button>
+      </div>
+      <a href="/" onclick="sysClear();">
+        <div class="cl-btn-9">
+          <p>Очистить</p>
+        </div>
+      </a>
+      <script>
+        function sysClear() {
+          localStorage.clear();
+          document.location.reload();
+        }
+      </script>
+  </div>
+  <div id="popup01" class="overlay">
+    <div class="popup">
+      <div class="input_form">
+        <form class="go-bottom" action="/order" method="post">
+          <br>
+          <h2>Заполните данные</h2>
+          <input id='memory' name='memory' hidden=true type="text" required>
+          <input id='totalPrice' name='totalPrice' hidden=true type="text" required>
+          <div>
+            <input id="name" name="name" type="text" required>
+            <label for="name">Ваше имя</label>
+          </div>
+          <div>
+            <input id="email" name="email" type="text" required>
+            <label for="email">Ваш Email</label>
+          </div>
+          <div>
+            <input id="tel" name="tel" type="tel" required>
+            <label for="tel">Номер телефона</label>
+          </div>
+          <div class="cashback" id="cashback_block">
+            
+            <input id='cashback' name='cashback' value=0 type="radio" onchange="useCashback()">
+            <label for="cashback">
+              <table>
+              <tr>
+                <td><p id="cashback_label"> Нажмите, чтобы использовать </p></td>
+                <td><p id="cashback_p"></p></td>
+              </tr>
+            </table>
+            </label>            
+          </div>
+          <br>
+          <input class="nxt_stp_btn" id="nxt_stp_btn" hidden=true type="submit" value="Отправить">
+          <br>
+          <p id="loginSuggestion"> <a href="/lk">Войдите</a> в личный кабинет, чтобы использовать кэшбэк </p>
+        </form>
+        <script>
+          checkUser();
+        </script>
+        <a href="#">
+          <div class="cl-btn-7"></div>
+        </a>
+        <br>
+      </div>
+    </div>
+  </div>
+</div>
